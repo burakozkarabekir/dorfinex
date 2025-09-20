@@ -1,0 +1,26 @@
+<svg width="2446" height="669" viewBox="0 0 2446 669" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#000e56;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0693e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rectangle -->
+  <rect width="2446" height="669" fill="white"/>
+  
+  <!-- TEST CONSULTANCY text -->
+  <text x="1223" y="350" font-family="Arial, sans-serif" font-size="120" font-weight="bold" text-anchor="middle" fill="url(#logoGradient)">
+    TEST CONSULTANCY
+  </text>
+  
+  <!-- Decorative line -->
+  <line x1="800" y1="500" x2="1646" y2="500" stroke="url(#logoGradient)" stroke-width="4"/>
+  
+  <!-- Tech icons -->
+  <circle cx="600" cy="200" r="40" fill="url(#logoGradient)"/>
+  <circle cx="1846" cy="200" r="40" fill="url(#logoGradient)"/>
+  
+  <!-- Connection lines -->
+  <line x1="640" y1="200" x2="1806" y2="200" stroke="url(#logoGradient)" stroke-width="2" stroke-dasharray="5,5"/>
+</svg> 
