@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initAnimations();
     initDropdownMenu();
+    initMobileOptimizations();
     
     // Test all links
     testAllLinks();
@@ -178,6 +179,102 @@ function initDropdownMenu() {
     });
 }
 
+// Mobile optimizations
+function initMobileOptimizations() {
+    // Prevent zoom on input focus for iOS
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            if (window.innerWidth <= 768) {
+                const viewport = document.querySelector('meta[name="viewport"]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                }
+            }
+        });
+        
+        input.addEventListener('blur', function() {
+            if (window.innerWidth <= 768) {
+                const viewport = document.querySelector('meta[name="viewport"]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                }
+            }
+        });
+    });
+    
+    // Improve touch interactions
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+        
+        button.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // Optimize scroll performance on mobile
+    let ticking = false;
+    
+    function updateScrollEffects() {
+        const header = document.querySelector('.header');
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (header) {
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        ticking = false;
+    }
+    
+    function requestScrollUpdate() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    }
+    
+    // Use passive event listeners for better performance
+    window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+    
+    // Handle orientation change
+    window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+            // Recalculate layout after orientation change
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                heroSection.style.height = window.innerHeight + 'px';
+            }
+        }, 100);
+    });
+    
+    // Improve mobile menu close behavior
+    document.addEventListener('click', function(e) {
+        const mobileMenu = document.querySelector('.main-nav');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                
+                // Reset hamburger animation
+                const spans = mobileToggle.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.style.transform = 'none';
+                    span.style.opacity = '1';
+                });
+            }
+        }
+    });
+}
+
 // Test all internal links
 function testAllLinks() {
     const links = document.querySelectorAll('a[href^="#"]');
@@ -192,17 +289,40 @@ function testAllLinks() {
     });
 }
 
-// Header scroll effect
+// Header scroll effect with hide/show functionality
+let lastScrollTop = 0;
+let scrollTimeout;
+
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (header) {
+        // Add scrolled class for styling
         if (scrollTop > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+        
+        // Hide/show header based on scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down - hide header
+            header.classList.add('hidden');
+        } else {
+            // Scrolling up - show header
+            header.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+        
+        // Clear any existing timeout
+        clearTimeout(scrollTimeout);
+        
+        // Show header after a delay when scrolling stops
+        scrollTimeout = setTimeout(function() {
+            header.classList.remove('hidden');
+        }, 150);
     }
 });
 
