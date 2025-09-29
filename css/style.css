@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary-color: #598BAF;
-    --secondary-color: #2563eb;
-    --accent-color: #06b6d4;
+    --primary-color: #4A7BA7;
+    --secondary-color: #1d4ed8;
+    --accent-color: #0891b2;
     --text-dark: #1f2937;
     --text-medium: #4b5563;
     --text-light: #6b7280;
@@ -61,14 +61,14 @@ h1 {
 }
 h2 { 
     font-size: clamp(2rem, 4vw, 3rem); 
-    font-weight: 700;
+    font-weight: 800;
 }
 h3 { 
     font-size: clamp(1.5rem, 3vw, 2rem); 
-    font-weight: 600;
+    font-weight: 700;
 }
-h4 { font-size: 1.25rem; font-weight: 600; }
-h5 { font-size: 1.125rem; font-weight: 600; }
+h4 { font-size: 1.25rem; font-weight: 700; }
+h5 { font-size: 1.125rem; font-weight: 700; }
 h6 { font-size: 1rem; font-weight: 600; }
 
 p {
@@ -495,6 +495,7 @@ ul {
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
+    font-style: italic;
     line-height: 1.4;
     max-width: 800px;
     margin-left: auto;
