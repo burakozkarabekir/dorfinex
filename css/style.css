@@ -134,14 +134,14 @@ ul {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #1E293B 0%, #3B82F6 50%, #1E40AF 100%);
+    background: linear-gradient(135deg, #334155 0%, #1E293B 100%);
     color: #fff;
     border: 1px solid transparent;
     padding: 12px 18px;
     border-radius: 10px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(30, 41, 59, 0.3), 0 2px 4px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 15px rgba(30, 41, 59, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -158,9 +158,9 @@ ul {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #1E293B 100%);
+    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(30, 41, 59, 0.4), 0 4px 8px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 6px 20px rgba(30, 41, 59, 0.3);
 }
 
 .btn-primary:hover::before {
@@ -765,18 +765,19 @@ ul {
 }
 
 .partnership-card {
-    background: var(--surface);
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: var(--transition);
+    color: #FFFFFF;
 }
 
 .partnership-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .partnership-card h3 {
@@ -785,7 +786,7 @@ ul {
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    color: var(--text);
+    color: #FFFFFF;
 }
 
 .partnership-card i {
@@ -818,17 +819,18 @@ ul {
 }
 
 .insight-card {
-    background: var(--surface);
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     border-radius: var(--border-radius-lg);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
+    color: #FFFFFF;
 }
 
 .insight-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .insight-image {
@@ -855,14 +857,14 @@ ul {
 
 .insight-content h3 {
     margin-bottom: 1rem;
-    color: var(--text);
+    color: #FFFFFF;
     font-size: 1.25rem;
     line-height: 1.3;
 }
 
 .insight-content p {
     margin-bottom: 1.5rem;
-    color: var(--muted);
+    color: #E2E8F0;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -1578,32 +1580,33 @@ ul {
 }
 
 .service-detail-card {
-    background: var(--surface);
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2.5rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
+    color: #FFFFFF;
 }
 
 .service-detail-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-detail-card h3 {
     margin-bottom: 1.5rem;
-    color: var(--text);
+    color: #FFFFFF;
 }
 
 .service-detail-card p {
     margin-bottom: 1rem;
-    color: var(--muted);
+    color: #E2E8F0;
     line-height: 1.6;
 }
 
 .service-detail-card strong {
-    color: var(--text);
+    color: #FFFFFF;
     font-weight: 600;
 }
 
