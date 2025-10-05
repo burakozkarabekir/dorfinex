@@ -667,18 +667,19 @@ ul {
 }
 
 .service-card {
-    background: var(--surface);
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: var(--transition);
+    color: #FFFFFF;
 }
 
 .service-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
@@ -699,7 +700,7 @@ ul {
 
 .service-card h3 {
     margin-bottom: 1rem;
-    color: var(--text);
+    color: #FFFFFF;
 }
 
 /* Why Us Section */
@@ -715,18 +716,19 @@ ul {
 }
 
 .differentiator-card {
-    background: var(--surface);
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: var(--transition);
+    color: #FFFFFF;
 }
 
 .differentiator-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .differentiator-icon {
@@ -747,7 +749,7 @@ ul {
 
 .differentiator-card h3 {
     margin-bottom: 1rem;
-    color: var(--text);
+    color: #FFFFFF;
 }
 
 /* Partners Section */
