@@ -11,8 +11,8 @@
     --text: #0F172A;        /* main text (near-black) */
     --muted: #475569;       /* secondary text */
     --border: #E5E7EB;      /* hairline borders/dividers */
-    --accent: #2563EB;      /* action/links/buttons (blue) */
-    --accent-hover: #1D4ED8;
+    --accent: #1E3A8A;      /* action/links/buttons (dark blue/lacivert) */
+    --accent-hover: #1E40AF;
     --focus: 0 0 0 3px rgba(37,99,235,.35); /* focus ring */
     
     /* Legacy variables for compatibility */
@@ -465,10 +465,33 @@ ul {
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-image: 
+        radial-gradient(currentColor 1px, transparent 1px),
+        linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(30, 64, 175, 0.05) 100%);
     color: #CBD5E1; /* dot color */
-    background-size: 18px 18px;
-    opacity: 0.35;
+    background-size: 18px 18px, 100% 100%;
+    opacity: 0.4;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 40%, rgba(30, 58, 138, 0.02) 50%, transparent 60%);
+    transform: rotate(15deg);
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 40%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(30, 64, 175, 0.03) 0%, transparent 70%);
 }
 
 .hero-video-bg {
@@ -1611,6 +1634,21 @@ ul {
     outline: none;
     border-color: var(--accent);
     box-shadow: var(--focus);
+}
+
+/* Soon Badge Styling */
+.soon-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+    box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
 }
 
 /* Safari-specific fixes */
