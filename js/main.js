@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initContactForm();
     initAnimations();
-    initDropdownMenu();
     initMobileOptimizations();
     
     // Test all links
@@ -155,29 +154,6 @@ function initAnimations() {
     });
 }
 
-// Dropdown menu functionality
-function initDropdownMenu() {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const dropdownContent = dropdown.querySelector('.dropdown-content');
-        
-        if (dropdownContent) {
-            // Handle hover events
-            dropdown.addEventListener('mouseenter', function() {
-                dropdownContent.style.opacity = '1';
-                dropdownContent.style.visibility = 'visible';
-                dropdownContent.style.transform = 'translateY(0)';
-            });
-            
-            dropdown.addEventListener('mouseleave', function() {
-                dropdownContent.style.opacity = '0';
-                dropdownContent.style.visibility = 'hidden';
-                dropdownContent.style.transform = 'translateY(-10px)';
-            });
-        }
-    });
-}
 
 // Mobile optimizations
 function initMobileOptimizations() {
