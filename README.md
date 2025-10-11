@@ -1,6 +1,6 @@
-# Digital & Tech Consultancy Website
+# TechWawes — Digital Consulting & Partnerships
 
-A modern, responsive website for Digital & Tech Consultancy. This website showcases digital consultancy services, business partnerships, and strategies that drive measurable growth.
+A modern, responsive website for TechWawes. This website showcases digital consultancy services, business partnerships, and strategies that drive measurable growth.
 
 ## Features
 
@@ -25,7 +25,7 @@ A modern, responsive website for Digital & Tech Consultancy. This website showca
 ## Project Structure
 
 ```
-connect-website/
+techwawes/
 ├── index.html              # Main HTML file
 ├── css/
 │   └── style.css          # Main stylesheet
@@ -145,12 +145,12 @@ Replace the placeholder images in the `assets/images/` directory:
 
 ### Contact Details
 
-- **Phone**: +90 530 037 2071
-- **Email**: burakozkarabekir@gmail.com
+- **Website**: https://techwawes.com
+- **Email**: contact@techwawes.com
 
 ### Social Media
 
-- **LinkedIn**: https://www.linkedin.com/company/test-consultancy/
+- **LinkedIn**: https://www.linkedin.com/company/techwawes/
 
 ## Browser Support
 
@@ -249,13 +249,20 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For support or questions:
 
-- Email: burakozkarabekir@gmail.com
-- Phone: +90 530 037 2071
+- Email: contact@techwawes.com
+- LinkedIn: https://www.linkedin.com/company/techwawes/
 
 ## Changelog
 
+### Version 2.1.0 (2025-10-11)
+- Added legal pages (Privacy Policy, Terms of Service, Cookie Policy)
+- Fixed LinkedIn URL consistency
+- Removed duplicate folder structure
+- Cleaned up template files
+- Updated branding to TechWawes
+
 ### Version 2.0.0 (2024-12-19)
-- Complete content transformation to Digital & Tech Consultancy
+- Complete content transformation to TechWawes Digital Consulting
 - New hero section with dual CTAs
 - Updated services and solutions
 - Added mission and vision statements
@@ -281,4 +288,4 @@ For support or questions:
 
 ---
 
-**Note**: This is a website for Digital & Tech Consultancy. Replace all placeholder content, images, and contact information with your actual business information before going live. 
+**Note**: This is the official website for TechWawes - Digital Consulting & Partnerships. Replace all placeholder content and images with your actual business information before going live. 
