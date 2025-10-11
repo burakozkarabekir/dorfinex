@@ -881,9 +881,10 @@ ul {
 
 .insight-content p {
     margin-bottom: 1.5rem;
-    color: #E2E8F0;
+    color: #FFFFFF;
     font-size: 1rem;
     line-height: 1.6;
+    opacity: 0.95;
 }
 
 .insight-link {
@@ -1007,10 +1008,15 @@ ul {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, #1E293B 0%, #334155 50%, #475569 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+    color: #FFFFFF;
     padding: 3rem 0 1rem;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
 }
 
 .footer-content {
@@ -1022,7 +1028,9 @@ ul {
 
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--white);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.125rem;
 }
 
 .footer-section ul {
@@ -1032,14 +1040,16 @@ ul {
 }
 
 .footer-section a {
-    color: var(--white);
-    opacity: 0.8;
+    color: #FFFFFF;
+    opacity: 1;
+    font-weight: 500;
     transition: var(--transition);
 }
 
 .footer-section a:hover {
     opacity: 1;
-    color: var(--accent);
+    color: #60a5fa;
+    text-decoration: underline;
 }
 
 .footer-logo-text {
@@ -1072,8 +1082,13 @@ ul {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    color: #FFFFFF;
+    opacity: 1;
+    font-weight: 400;
 }
 
 /* Responsive Design */
@@ -1627,8 +1642,9 @@ ul {
 
 .service-detail-card p {
     margin-bottom: 1rem;
-    color: #E2E8F0;
+    color: #FFFFFF;
     line-height: 1.6;
+    opacity: 0.95;
 }
 
 .service-detail-card strong {
