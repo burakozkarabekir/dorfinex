@@ -104,12 +104,12 @@ function initContactForm() {
             
             // Basic validation
             if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
+                showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
+                showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
             
@@ -117,11 +117,74 @@ function initContactForm() {
             console.log('Form submitted:', { name, email, company, message });
             
             // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
+            showFormMessage('Thank you for your message! We will get back to you within 24 hours.', 'success');
             
             // Reset form
-            this.reset();
+            setTimeout(() => this.reset(), 2000);
         });
+    }
+}
+
+// Show professional form message
+function showFormMessage(message, type) {
+    // Remove any existing message
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create message element
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'form-message form-message-' + type;
+    messageDiv.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    if (!document.getElementById('form-message-styles')) {
+        style.id = 'form-message-styles';
+        style.textContent = `
+            .form-message {
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-weight: 500;
+                animation: slideIn 0.3s ease-out;
+            }
+            .form-message-success {
+                background: #10b981;
+                color: white;
+            }
+            .form-message-error {
+                background: #ef4444;
+                color: white;
+            }
+            .form-message i {
+                font-size: 1.25rem;
+            }
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Insert before form
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.parentNode.insertBefore(messageDiv, form);
     }
 }
 
