@@ -1,0 +1,19 @@
+# robots.txt for TechWawes
+# Generated: October 11, 2025
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Sitemap location
+Sitemap: https://techwawes.com/sitemap.xml
+
+# Crawl delay (optional - reduces server load)
+Crawl-delay: 1
+
+# Block specific bots if needed (optional)
+# User-agent: BadBot
+# Disallow: /
+

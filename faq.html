@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | TechWawes — Digital Consulting & Partnerships</title>
+    <meta name="description" content="Frequently asked questions about TechWawes digital consulting services, partnerships, pricing, and engagement models.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .faq-section {
+            padding: 4rem 0;
+            background: var(--surface);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-category h2 {
+            color: var(--text);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .faq-item {
+            background: var(--bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text);
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent);
+        }
+        
+        .faq-icon {
+            font-size: 1.25rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-cta {
+            background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .faq-cta h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="social-links">
+                        <span>Follow Us</span>
+                        <a href="https://www.linkedin.com/company/techwawes/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <div class="logo-text">
+                                <span class="company-name">TechWawes</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <nav class="main-nav">
+                        <ul class="nav-menu">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Our Services</a></li>
+                            <li><a href="index.html#why-us">Why Us</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="header-actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            <span>Contact</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about our services and engagement models</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container faq-container">
+                
+                <!-- General Questions -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-question-circle"></i> General Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is TechWawes?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                TechWawes is a digital consulting and technology partnership firm that helps enterprises, service providers, and technology vendors achieve measurable growth through strategic consulting, ecosystem partnerships, and technology innovation. We specialize in digital transformation, AI/analytics, telecom/ICT solutions, and go-to-market strategies.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What industries do you serve?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We primarily serve telecommunications, technology, enterprise software, and digital platform companies. Our expertise spans across B2B and B2C sectors, including service providers, SaaS vendors, hardware manufacturers, system integrators, and innovative startups across various verticals.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Where are you located?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                While our team operates globally, we have successfully delivered projects across Europe, Middle East, and Asia-Pacific regions. We work with clients remotely and on-site based on project requirements, ensuring seamless collaboration regardless of location.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Questions -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-cogs"></i> Services & Solutions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What services do you offer?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Our core services include: Digital Consulting (growth strategy, GTM plans, funnel optimization), Partnerships & Ecosystem Development, Tech Advisory (vendor selection, architecture review), AI & Analytics (ML implementation, data strategy), Telecom & ICT Solutions (5G, network monitoring), and MarTech Solutions (automation, customer journey orchestration).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do you approach digital transformation projects?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We follow a pragmatic, outcome-focused approach: (1) Discovery & Assessment - understand current state and business goals, (2) Strategy Development - create actionable roadmap with clear KPIs, (3) Execution - hands-on implementation with your team, (4) Optimization - continuous measurement and improvement. We emphasize quick wins while building long-term capabilities.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you only provide strategy or also implementation?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We provide both. Unlike traditional consulting firms that stop at strategy, we roll up our sleeves and execute alongside your team. Our engagements can range from pure advisory to full end-to-end implementation, depending on your needs. We believe the best strategies are those that get implemented successfully.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can you help with technology vendor selection?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Absolutely. Our Tech Advisory service includes comprehensive vendor evaluation based on your specific requirements. We are vendor-agnostic and provide unbiased recommendations. We assess technical capabilities, pricing models, integration complexity, support quality, and long-term viability to help you make informed decisions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engagement & Pricing -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-handshake"></i> Engagement & Pricing</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What are your engagement models?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We offer flexible engagement models: (1) Project-Based - fixed scope and timeline with defined deliverables, (2) Retainer - ongoing advisory and support on monthly basis, (3) Time & Materials - flexible resource allocation billed hourly/daily, (4) Success-Based - performance-linked fees tied to measurable outcomes. We tailor our approach to your specific needs and risk profile.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does a typical engagement last?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Engagement duration varies based on scope. Strategic assessments typically take 4-8 weeks. Digital transformation programs range from 3-12 months. Partnership development projects span 2-6 months. We can also provide ongoing advisory relationships that last multiple years. We'll provide a clear timeline during the scoping phase.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How much do your services cost?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Pricing depends on project scope, complexity, duration, and required expertise. We provide transparent proposals with detailed cost breakdowns. For reference, strategic consulting projects typically start at $25,000, while comprehensive transformation programs can range from $100,000 to $500,000+. We offer flexible payment terms and can structure pricing to align with your budget and cash flow requirements.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you work with startups?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes! We work with innovative startups, especially in technology and digital platform sectors. For early-stage companies, we offer flexible pricing models including equity-based arrangements, milestone-based payments, and reduced rates for promising ventures. We're passionate about helping innovators scale and can provide valuable introductions to investors and potential partners.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process & Timeline -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-tasks"></i> Process & Timeline</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is your typical project process?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Our process follows these phases: (1) Initial Consultation - understand your needs and challenges, (2) Proposal & Scoping - detailed SOW with timelines and deliverables, (3) Kickoff - align team, set expectations, establish communication channels, (4) Discovery - data gathering, stakeholder interviews, market research, (5) Analysis & Strategy - develop recommendations and roadmap, (6) Execution - implement solutions with your team, (7) Measurement - track KPIs and optimize, (8) Knowledge Transfer - ensure sustainability.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How quickly can you start?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                For urgent needs, we can mobilize within 1-2 weeks. Standard projects typically kick off within 2-4 weeks from agreement signature. We prioritize quick starts while ensuring proper planning and resource allocation. During peak seasons, lead times may be slightly longer, but we'll always communicate realistic timelines upfront.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do you measure success?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Success is measured through clearly defined KPIs agreed upon at project start. Common metrics include: revenue growth, cost reduction, customer acquisition cost, conversion rate improvement, time-to-market reduction, partner deals closed, system uptime/performance, user adoption rates, and ROI. We provide regular progress reports with data-backed insights and adjust strategies based on results.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-code"></i> Technical Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What technologies do you specialize in?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We have deep expertise across cloud platforms (AWS, Azure, GCP), data & analytics (Snowflake, Databricks, PowerBI), AI/ML frameworks (TensorFlow, PyTorch), CRM/ERP systems (Salesforce, SAP, Microsoft Dynamics), MarTech stacks (HubSpot, Marketo, Adobe), telecom technologies (5G, NFV, SDN), and modern development stacks (microservices, containers, serverless). We're technology-agnostic and recommend solutions based on your specific context.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you provide ongoing support after project completion?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes. We offer post-project support through various models: (1) Extended Support - fixed period of assistance after go-live, (2) Retainer Agreements - ongoing advisory and troubleshooting, (3) On-Demand Support - pay-as-you-go help when needed, (4) Managed Services - we operate and optimize on your behalf. Our goal is to ensure long-term success, not just project completion.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Box -->
+                <div class="faq-cta">
+                    <h3>Still Have Questions?</h3>
+                    <p>Can't find the answer you're looking for? Our team is here to help.</p>
+                    <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--accent); border: none;">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-text">
+                            <span class="company-name">TechWawes</span>
+                        </div>
+                    </div>
+                    <p>Delivering measurable growth through digital consulting and technology solutions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Digital Consulting</a></li>
+                        <li><a href="services.html">Partnerships & Ecosystem</a></li>
+                        <li><a href="services.html">Tech Advisory</a></li>
+                        <li><a href="services.html">AI & Analytics</a></li>
+                        <li><a href="services.html">MarTech Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechWawes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
