@@ -656,6 +656,8 @@ ul {
 .mission-card p,
 .vision-card p {
     color: #FFFFFF !important;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
 
 /* Services Section */
@@ -709,6 +711,8 @@ ul {
 
 .service-card p {
     color: #FFFFFF !important;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
 
 /* Why Us Section */
@@ -763,6 +767,8 @@ ul {
 
 .differentiator-card p {
     color: #FFFFFF !important;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
 
 /* Partners Section */
@@ -804,6 +810,8 @@ ul {
 
 .partnership-card p {
     color: #FFFFFF !important;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
 
 .partnership-card i {
