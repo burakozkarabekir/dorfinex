@@ -8,11 +8,11 @@
 :root {
     --bg: #F8FAFC;          /* page background (soft white) */
     --surface: #FFFFFF;     /* cards/sections */
-    --text: #0F172A;        /* main text (near-black) */
-    --muted: #475569;       /* secondary text */
+    --text: #0F172A;        /* main text (near-black) - HIGH CONTRAST */
+    --muted: #334155;       /* secondary text - IMPROVED CONTRAST */
     --border: #E5E7EB;      /* hairline borders/dividers */
     --accent: #1E293B;      /* action/links/buttons (darker blue/lacivert) */
-    --accent-hover: #334155;
+    --accent-hover: #0F172A;
     --focus: 0 0 0 3px rgba(37,99,235,.35); /* focus ring */
     
     /* Legacy variables for compatibility */
@@ -50,10 +50,32 @@ body {
     font-size: 16px;
 }
 
-/* Typography */
+/* Typography - FIXED: Consistent across all pages */
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text);
+    letter-spacing: -0.025em;
+}
+
+h1 { 
+    font-size: clamp(2.25rem, 5vw, 3.5rem); 
+    font-weight: 700;
+    line-height: 1.1;
+}
+h2 { 
+    font-size: clamp(1.875rem, 4vw, 2.5rem); 
+    font-weight: 700;
+}
+h3 { 
+    font-size: clamp(1.5rem, 3vw, 1.875rem); 
     font-weight: 600;
 }
+h4 { font-size: 1.25rem; font-weight: 600; }
+h5 { font-size: 1.125rem; font-weight: 600; }
+h6 { font-size: 1rem; font-weight: 600; }
 
 .container {
     max-width: var(--container-max-width);
@@ -61,37 +83,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-    letter-spacing: -0.025em;
-}
-
-h1 { 
-    font-size: clamp(2.5rem, 5vw, 4rem); 
-    font-weight: 600;
-    line-height: 1.1;
-}
-h2 { 
-    font-size: clamp(2rem, 4vw, 3rem); 
-    font-weight: 600;
-}
-h3 { 
-    font-size: clamp(1.5rem, 3vw, 2rem); 
-    font-weight: 600;
-}
-h4 { font-size: 1.25rem; font-weight: 600; }
-h5 { font-size: 1.125rem; font-weight: 600; }
-h6 { font-size: 1rem; font-weight: 600; }
-
 p {
     margin-bottom: 1rem;
-    color: var(--text-medium);
-    font-size: 1.125rem;
+    color: var(--muted);
+    font-size: 1.0625rem;
     line-height: 1.7;
 }
 
@@ -506,7 +501,8 @@ ul {
 .section-header p {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
+    color: var(--muted);
 }
 
 /* Hero Section */
@@ -1568,7 +1564,7 @@ ul {
 .p-3 { padding: 1.5rem; }
 .p-4 { padding: 2rem; }
 
-/* Page Header Styles */
+/* Page Header Styles - FIXED: Consistent sizing */
 .page-header {
     padding: 4rem 0 2rem;
     background: var(--bg);
@@ -1576,10 +1572,11 @@ ul {
 }
 
 .page-header h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text);
+    line-height: 1.1;
 }
 
 .page-header p {
@@ -1587,6 +1584,7 @@ ul {
     color: var(--muted);
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Services Detail Styles */
