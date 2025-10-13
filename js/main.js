@@ -204,37 +204,14 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Optimize edilmiş scroll animasyonları
+// Scroll animasyonları kaldırıldı - kullanıcı isteği üzerine
 function initOptimizedAnimations() {
-    // prefers-reduced-motion kontrolü
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-        console.log('Reduced motion tercih edildi - animasyonlar devre dışı');
-        // Tüm fade-in elementlerini hemen görünür yap
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.classList.add('--visible');
-        });
-        return; // Animasyonları başlatma
-    }
-    
-    // Card elementlerini fade-in class'ı ile işaretle
-    const cards = document.querySelectorAll('.service-card, .differentiator-card, .partnership-card, .mission-card, .vision-card, .insight-card');
-    cards.forEach(card => {
-        card.classList.add('fade-in');
+    // Tüm fade-in elementlerini hemen görünür yap (animasyon yok)
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.add('--visible');
     });
     
-    // IntersectionObserver ile element görünürlüğünü yönet
-    // Her element sadece bir kez animasyon oynatır
-    const cleanup = inViewObserver('.fade-in', {
-        root: null,
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    cleanupFunctions.push(cleanup);
-    
-    console.log('Optimized animations initialized with IntersectionObserver');
+    console.log('Scroll animations have been disabled as requested');
 }
 
 
