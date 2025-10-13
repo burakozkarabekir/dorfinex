@@ -120,11 +120,11 @@ export function scrollDirection(onScrollDown, onScrollUp, threshold = 10) {
                 const delta = currentScrollY - lastScrollY;
                 
                 if (Math.abs(delta) > threshold) {
-                    if (delta > 0 && currentScrollY > 100) {
-                        // Aşağı scroll
+                    if (delta > 0 && currentScrollY > 50) {
+                        // Aşağı scroll - header'ı gizle
                         onScrollDown(currentScrollY);
                     } else if (delta < 0) {
-                        // Yukarı scroll
+                        // Yukarı scroll - header'ı göster
                         onScrollUp(currentScrollY);
                     }
                     lastScrollY = currentScrollY;
