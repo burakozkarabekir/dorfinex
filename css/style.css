@@ -387,40 +387,40 @@ ul {
 
 /* Logo Image Styles */
 .logo-img {
-    height: 120px; /* 2x bigger: 60px * 2 */
+    height: 80px; /* Original size from design */
     width: auto;
-    max-width: 600px; /* 2x bigger: 300px * 2 */
+    max-width: 400px;
     object-fit: contain;
 }
 
 .footer-logo .logo-img {
-    height: 104px; /* 2x bigger: 52px * 2 */
+    height: 70px; /* Original footer size */
     width: auto;
-    max-width: 540px; /* 2x bigger: 270px * 2 */
+    max-width: 360px;
 }
 
 /* Mobile Logo Adjustments */
 @media (max-width: 768px) {
     .logo-img {
-        height: 64px; /* 2x bigger: 32px * 2 */
-        max-width: 300px; /* 2x bigger: 150px * 2 */
+        height: 50px;
+        max-width: 250px;
     }
     
     .footer-logo .logo-img {
-        height: 56px; /* 2x bigger: 28px * 2 */
-        max-width: 240px; /* 2x bigger: 120px * 2 */
+        height: 45px;
+        max-width: 220px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-img {
-        height: 56px; /* 2x bigger: 28px * 2 */
-        max-width: 240px; /* 2x bigger: 120px * 2 */
+        height: 42px;
+        max-width: 200px;
     }
     
     .footer-logo .logo-img {
-        height: 48px; /* 2x bigger: 24px * 2 */
-        max-width: 200px; /* 2x bigger: 100px * 2 */
+        height: 38px;
+        max-width: 180px;
     }
 }
 

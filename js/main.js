@@ -247,19 +247,24 @@ function initOptimizedAnimations() {
 function initOptimizedScrollEffects() {
     const header = document.querySelector('.header');
     
-    if (!header) return;
+    if (!header) {
+        console.warn('Header element not found for scroll effects');
+        return;
+    }
     
     // requestAnimationFrame ile scroll direction yönetimi
     const cleanup = scrollDirection(
-        // Aşağı scroll
+        // Aşağı scroll - header'ı gizle
         (scrollY) => {
+            console.log('Scrolling DOWN, hiding header at:', scrollY);
             header.classList.add('hidden');
             if (scrollY > 50) {
                 header.classList.add('scrolled');
             }
         },
-        // Yukarı scroll
+        // Yukarı scroll - header'ı göster
         (scrollY) => {
+            console.log('Scrolling UP, showing header at:', scrollY);
             header.classList.remove('hidden');
             if (scrollY > 50) {
                 header.classList.add('scrolled');
@@ -267,12 +272,12 @@ function initOptimizedScrollEffects() {
                 header.classList.remove('scrolled');
             }
         },
-        10 // threshold
+        5 // threshold - daha hassas yanıt için düşürüldü
     );
     
     cleanupFunctions.push(cleanup);
     
-    console.log('Optimized scroll effects initialized');
+    console.log('✅ Header scroll effects initialized - scroll down to hide, scroll up to show');
 }
 
 // Mobile optimizations
