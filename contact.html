@@ -17,6 +17,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
 </head>
 <body>
     <!-- Header -->
@@ -119,11 +122,7 @@
                     
                     <div class="contact-form" id="contact-form">
                         <h3>Send us a Message</h3>
-                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-                            <input type="hidden" name="subject" value="New Contact Form Submission from Dorfinex Website">
-                            <input type="hidden" name="from_name" value="Dorfinex Website">
-                            <input type="hidden" name="redirect" value="https://burakozkarabekir.github.io/dorfinex/contact.html?success=true">
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required>

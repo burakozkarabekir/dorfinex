@@ -97,42 +97,68 @@ function initSmoothScrolling() {
     });
 }
 
-// Contact form functionality with Web3Forms
+// Contact form functionality with EmailJS
 function initContactForm() {
-    // Check for success parameter in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-        showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
-        // Clean URL
-        window.history.replaceState({}, document.title, window.location.pathname);
-    }
+    // Initialize EmailJS with your public key
+    emailjs.init('user_public_key'); // Bu key'i EmailJS'den alacaksınız
     
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Basic validation before submission
+            e.preventDefault();
+            
+            // Get form data
             const formData = new FormData(this);
             const name = formData.get('name');
             const email = formData.get('email');
+            const company = formData.get('company');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
             const message = formData.get('message');
+            const gdpr = formData.get('gdpr');
             
+            // Basic validation
             if (!name || !email || !message) {
-                e.preventDefault();
                 showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
-                e.preventDefault();
                 showFormMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            if (!gdpr) {
+                showFormMessage('Please accept the Privacy Policy to continue.', 'error');
                 return;
             }
             
             // Show loading message
             showFormMessage('Sending your message...', 'info');
             
-            // Form will submit to Web3Forms
+            // Prepare template parameters
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                company: company || 'Not provided',
+                phone: phone || 'Not provided',
+                service: service || 'Not specified',
+                message: message,
+                to_email: 'contact@dorfinex.com',
+                reply_to: email
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_id', 'template_id', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+                    contactForm.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showFormMessage('Sorry, there was an error sending your message. Please try again or contact us directly at contact@dorfinex.com', 'error');
+                });
         });
     }
 }
