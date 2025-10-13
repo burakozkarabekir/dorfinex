@@ -1,4 +1,8 @@
 // Main JavaScript file for Digital & Tech Consultancy website
+import { createRAFScroll, inViewObserver, scrollDirection } from './scroll-utils.js';
+
+// Global cleanup functions
+const cleanupFunctions = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Website loaded successfully');
@@ -7,11 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSmoothScrolling();
     initContactForm();
-    initAnimations();
+    initOptimizedAnimations();
     initMobileOptimizations();
+    initOptimizedScrollEffects();
     
     // Test all links
     testAllLinks();
+});
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    cleanupFunctions.forEach(cleanup => cleanup());
 });
 
 // Mobile menu functionality
@@ -194,29 +204,71 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Scroll animations
-function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+// Optimize edilmiş scroll animasyonları
+function initOptimizedAnimations() {
+    // prefers-reduced-motion kontrolü
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-            }
+    if (prefersReducedMotion) {
+        console.log('Reduced motion tercih edildi - animasyonlar devre dışı');
+        // Tüm fade-in elementlerini hemen görünür yap
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.add('--visible');
         });
-    }, observerOptions);
+        return; // Animasyonları başlatma
+    }
     
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.service-card, .differentiator-card, .partnership-card, .mission-card, .vision-card, .insight-card');
-    
-    animatedElements.forEach(element => {
-        observer.observe(element);
+    // Card elementlerini fade-in class'ı ile işaretle
+    const cards = document.querySelectorAll('.service-card, .differentiator-card, .partnership-card, .mission-card, .vision-card, .insight-card');
+    cards.forEach(card => {
+        card.classList.add('fade-in');
     });
+    
+    // IntersectionObserver ile element görünürlüğünü yönet
+    // Her element sadece bir kez animasyon oynatır
+    const cleanup = inViewObserver('.fade-in', {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    cleanupFunctions.push(cleanup);
+    
+    console.log('Optimized animations initialized with IntersectionObserver');
 }
 
+
+// Optimize edilmiş scroll effects
+function initOptimizedScrollEffects() {
+    const header = document.querySelector('.header');
+    
+    if (!header) return;
+    
+    // requestAnimationFrame ile scroll direction yönetimi
+    const cleanup = scrollDirection(
+        // Aşağı scroll
+        (scrollY) => {
+            header.classList.add('hidden');
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            }
+        },
+        // Yukarı scroll
+        (scrollY) => {
+            header.classList.remove('hidden');
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        },
+        10 // threshold
+    );
+    
+    cleanupFunctions.push(cleanup);
+    
+    console.log('Optimized scroll effects initialized');
+}
 
 // Mobile optimizations
 function initMobileOptimizations() {
@@ -253,34 +305,6 @@ function initMobileOptimizations() {
             this.style.transform = '';
         });
     });
-    
-    // Optimize scroll performance on mobile
-    let ticking = false;
-    
-    function updateScrollEffects() {
-        const header = document.querySelector('.header');
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (header) {
-            if (scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-        
-        ticking = false;
-    }
-    
-    function requestScrollUpdate() {
-        if (!ticking) {
-            requestAnimationFrame(updateScrollEffects);
-            ticking = true;
-        }
-    }
-    
-    // Use passive event listeners for better performance
-    window.addEventListener('scroll', requestScrollUpdate, { passive: true });
     
     // Handle orientation change
     window.addEventListener('orientationchange', function() {
@@ -328,43 +352,6 @@ function testAllLinks() {
     });
 }
 
-// Header scroll effect with hide/show functionality
-let lastScrollTop = 0;
-let scrollTimeout;
-
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (header) {
-        // Add scrolled class for styling
-        if (scrollTop > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        // Hide/show header based on scroll direction
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down - hide header
-            header.classList.add('hidden');
-        } else {
-            // Scrolling up - show header
-            header.classList.remove('hidden');
-        }
-        
-        lastScrollTop = scrollTop;
-        
-        // Clear any existing timeout
-        clearTimeout(scrollTimeout);
-        
-        // Show header after a delay when scrolling stops
-        scrollTimeout = setTimeout(function() {
-            header.classList.remove('hidden');
-        }, 150);
-    }
-});
-
 // Service Worker registration (for PWA features)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
@@ -397,7 +384,7 @@ window.addEventListener('error', function(e) {
 
 // Console welcome message
 console.log(`
-%cTechwawes BETA
+%cDorfinex
 %cShaping the Future of Digital Partnerships
 %c
 %cWebsite loaded successfully!

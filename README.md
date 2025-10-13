@@ -1,6 +1,6 @@
-# TechWawes — Digital Consulting & Partnerships
+# Dorfinex — Digital Consulting & Partnerships
 
-A modern, responsive website for TechWawes. This website showcases digital consultancy services, business partnerships, and strategies that drive measurable growth.
+A modern, responsive website for Dorfinex. This website showcases digital consultancy services, business partnerships, and strategies that drive measurable growth.
 
 ## Features
 
@@ -145,8 +145,8 @@ Replace the placeholder images in the `assets/images/` directory:
 
 ### Contact Details
 
-- **Website**: https://techwawes.com
-- **Email**: contact@techwawes.com
+- **Website**: https://dorfinex.com
+- **Email**: contact@dorfinex.com
 
 ### Social Media
 
@@ -249,7 +249,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For support or questions:
 
-- Email: contact@techwawes.com
+- Email: contact@dorfinex.com
 - LinkedIn: https://www.linkedin.com/company/techwawes/
 
 ## Changelog
@@ -259,10 +259,10 @@ For support or questions:
 - Fixed LinkedIn URL consistency
 - Removed duplicate folder structure
 - Cleaned up template files
-- Updated branding to TechWawes
+- Updated branding to Dorfinex
 
 ### Version 2.0.0 (2024-12-19)
-- Complete content transformation to TechWawes Digital Consulting
+- Complete content transformation to Dorfinex Digital Consulting
 - New hero section with dual CTAs
 - Updated services and solutions
 - Added mission and vision statements
@@ -288,4 +288,4 @@ For support or questions:
 
 ---
 
-**Note**: This is the official website for TechWawes - Digital Consulting & Partnerships. Replace all placeholder content and images with your actual business information before going live. 
+**Note**: This is the official website for Dorfinex - Digital Consulting & Partnerships. Replace all placeholder content and images with your actual business information before going live. 

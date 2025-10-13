@@ -5,6 +5,70 @@
     box-sizing: border-box;
 }
 
+/* Smooth Scroll ve GPU Acceleration */
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU-accelerated animation sınıfı */
+.anim-safe {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* SVG ve ikon flicker önleme */
+svg, .icon, [data-icon], i.fas, i.fab {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Fade-in animasyonu (scroll ile) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: transform 320ms ease, opacity 320ms ease;
+}
+
+.fade-in.--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Azaltılmış hareket tercihi desteği */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .fade-in,
+    .fade-in-up,
+    .service-card,
+    .insight-card,
+    .differentiator-card,
+    .partnership-card,
+    .mission-card,
+    .vision-card {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 :root {
     --bg: #F8FAFC;          /* page background (soft white) */
     --surface: #FFFFFF;     /* cards/sections */
@@ -242,6 +306,10 @@ ul {
     z-index: 1000;
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
     transform: translateY(0);
+    /* GPU acceleration ve flicker önleme */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .header.scrolled {
@@ -678,13 +746,16 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #FFFFFF;
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px) translateZ(0);
 }
 
 .service-icon {
@@ -734,13 +805,16 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #FFFFFF;
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .differentiator-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px) translateZ(0);
 }
 
 .differentiator-icon {
@@ -790,13 +864,16 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #FFFFFF;
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .partnership-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px) translateZ(0);
 }
 
 .partnership-card h3 {
@@ -849,13 +926,16 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #FFFFFF;
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .insight-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px) translateZ(0);
 }
 
 .insight-image {
@@ -1829,13 +1909,16 @@ ul {
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #FFFFFF;
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .service-detail-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px) translateZ(0);
 }
 
 .service-detail-card h3 {
