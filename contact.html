@@ -40,9 +40,7 @@
                 <div class="header-content">
                     <div class="logo">
                         <a href="index.html">
-                            <div class="logo-text">
-                                <span class="company-name">Dorfinex</span>
-                            </div>
+                            <img src="assets/images/logo.svg" alt="Dorfinex" class="logo-img">
                         </a>
                     </div>
                     
@@ -120,7 +118,11 @@
                     
                     <div class="contact-form" id="contact-form">
                         <h3>Send us a Message</h3>
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/xpzqgqjp" method="POST">
+                            <input type="hidden" name="_to" value="contact@dorfinex.com">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission from Dorfinex Website">
+                            <input type="hidden" name="_replyto" value="">
+                            <input type="hidden" name="_next" value="https://burakozkarabekir.github.io/dorfinex/contact.html?success=true">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required>
@@ -177,9 +179,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-text">
-                            <span class="company-name">Dorfinex</span>
-                        </div>
+                        <img src="assets/images/logo.svg" alt="Dorfinex" class="logo-img">
                     </div>
                     <p>Delivering measurable growth through digital consulting and technology solutions.</p>
                 </div>

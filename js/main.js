@@ -99,38 +99,43 @@ function initSmoothScrolling() {
 
 // Contact form functionality
 function initContactForm() {
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+    
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
+            // Basic validation before submission
             const formData = new FormData(this);
             const name = formData.get('name');
             const email = formData.get('email');
-            const company = formData.get('company');
             const message = formData.get('message');
             
-            // Basic validation
             if (!name || !email || !message) {
+                e.preventDefault();
                 showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
+                e.preventDefault();
                 showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
             
-            // Simulate form submission
-            console.log('Form submitted:', { name, email, company, message });
+            // Set reply-to field
+            const replyToField = this.querySelector('input[name="_replyto"]');
+            if (replyToField) {
+                replyToField.value = email;
+            }
             
-            // Show success message
-            showFormMessage('Thank you for your message! We will get back to you within 24 hours.', 'success');
-            
-            // Reset form
-            setTimeout(() => this.reset(), 2000);
+            // Form will submit to Formspree
         });
     }
 }
