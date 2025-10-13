@@ -97,7 +97,7 @@ function initSmoothScrolling() {
     });
 }
 
-// Contact form functionality
+// Contact form functionality with Web3Forms
 function initContactForm() {
     // Check for success parameter in URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -129,13 +129,10 @@ function initContactForm() {
                 return;
             }
             
-            // Set reply-to field
-            const replyToField = this.querySelector('input[name="_replyto"]');
-            if (replyToField) {
-                replyToField.value = email;
-            }
+            // Show loading message
+            showFormMessage('Sending your message...', 'info');
             
-            // Form will submit to Formspree
+            // Form will submit to Web3Forms
         });
     }
 }
