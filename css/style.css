@@ -620,7 +620,7 @@ ul {
     align-items: center;
     overflow: hidden;
     background: 
-        linear-gradient(135deg, rgba(71, 85, 105, 0.85) 0%, rgba(51, 65, 85, 0.85) 50%, rgba(30, 41, 59, 0.85) 100%),
+        linear-gradient(135deg, rgba(71, 85, 105, 0.7) 0%, rgba(51, 65, 85, 0.7) 50%, rgba(30, 41, 59, 0.7) 100%),
         url('../assets/images/HERO_background.png') center/cover no-repeat;
     padding-block: 64px;
 }
