@@ -619,19 +619,19 @@ ul {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: 
-        linear-gradient(135deg, rgba(71, 85, 105, 0.7) 0%, rgba(51, 65, 85, 0.7) 50%, rgba(30, 41, 59, 0.7) 100%),
-        url('../assets/images/HERO_background.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.7) 0%, rgba(51, 65, 85, 0.7) 50%, rgba(30, 41, 59, 0.7) 100%);
     padding-block: 64px;
 }
 
-/* Hero Background - Subtle overlay for custom background image */
+/* Hero Background - Mirrored background image */
 .hero-bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.3;
+    background: url('../assets/images/HERO_background.png') center/cover no-repeat;
+    transform: scaleX(-1);
+    opacity: 1;
 }
 
 .hero-video-bg {
