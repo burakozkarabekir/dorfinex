@@ -631,7 +631,7 @@ ul {
     z-index: 0;
     background: url('../assets/images/HERO_background.png') center/cover no-repeat;
     transform: scaleX(-1);
-    opacity: 1;
+    opacity: 0.7;
 }
 
 .hero-video-bg {
