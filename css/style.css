@@ -1482,6 +1482,74 @@ ul {
         margin: 0 auto;
     }
     
+    /* Mobile Content Optimization - Hide non-essential sections for better UX */
+    .about-section,
+    .why-us-section,
+    .partners-section,
+    .insights-section {
+        display: none;
+    }
+    
+    /* Show only top 3 services on mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .services-grid .service-card:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* Mobile services CTA */
+    .mobile-services-cta {
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .mobile-services-cta .btn {
+        max-width: 250px;
+    }
+    
+    /* Hide mobile CTA on desktop */
+    @media (min-width: 769px) {
+        .mobile-services-cta {
+            display: none;
+        }
+    }
+    
+    /* Mobile-specific contact section */
+    .contact-section {
+        padding: 3rem 0;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-info p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Mobile-only footer links */
+    .mobile-only-links {
+        display: block;
+    }
+    
+    /* Hide mobile-only footer links on desktop */
+    @media (min-width: 769px) {
+        .mobile-only-links {
+            display: none;
+        }
+    }
+    
     /* Section spacing mobile optimization */
     .about-section,
     .services-section,
