@@ -1502,13 +1502,17 @@ ul {
     
     /* Mobile services CTA */
     .mobile-services-cta {
-        display: block;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 2rem;
+        width: 100%;
     }
     
     .mobile-services-cta .btn {
-        max-width: 250px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
     }
     
     /* Hide mobile CTA on desktop */
