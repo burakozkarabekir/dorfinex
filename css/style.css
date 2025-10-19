@@ -1565,21 +1565,23 @@ ul {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 2rem;
+        margin-top: 3rem;
         width: 100%;
+        padding: 0 1rem;
     }
     
     .mobile-insights-cta .btn {
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
+        text-align: center;
     }
     
     /* Hide mobile CTAs on desktop */
     @media (min-width: 769px) {
         .mobile-services-cta,
         .mobile-insights-cta {
-            display: none;
+            display: none !important;
         }
     }
     
