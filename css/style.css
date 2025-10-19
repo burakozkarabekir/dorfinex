@@ -1500,10 +1500,6 @@ ul {
         gap: 1.5rem;
     }
     
-    .insights-grid .insight-card:nth-child(n+2) {
-        display: none;
-    }
-    
     /* Show only top 3 services on mobile with better spacing */
     .services-grid {
         grid-template-columns: 1fr;
