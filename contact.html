@@ -121,6 +121,8 @@
                     <div class="contact-form" id="contact-form">
                         <h3>Send us a Message</h3>
                         <form id="contactForm" action="https://formspree.io/f/xnngrpkv" method="POST">
+                            <input type="hidden" name="_subject" value="New message from Dorfinex contact form">
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required>
@@ -157,6 +159,7 @@
                                 <span>Send Message</span>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
+                            <div id="form-status" class="form-status" style="margin-top:12px; font-size:0.95rem;"></div>
                         </form>
                     </div>
                 </div>
@@ -204,7 +207,44 @@
         </div>
     </footer>
 
+</body>
     <!-- JavaScript -->
+    <script>
+      (function () {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          if (status) status.textContent = 'Sending...';
+
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+              if (status) status.textContent = 'Thanks! Your message has been sent. We\'ll get back to you shortly.';
+              form.reset();
+            } else {
+              let msg = 'Submission failed. Please try again or email contact@dorfinex.com.';
+              try {
+                const data = await res.json();
+                if (data && data.errors) {
+                  msg = data.errors.map(e => e.message).join(', ');
+                }
+              } catch (_) { /* ignore parse errors */ }
+              if (status) status.textContent = msg;
+            }
+          } catch (err) {
+            if (status) status.textContent = 'Network error. Please try again later.';
+          }
+        });
+      })();
+    </script>
     <script type="module" src="js/main.js"></script>
     <script src="js/cookie-consent.js"></script>
 </body>
