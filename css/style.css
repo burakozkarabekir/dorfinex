@@ -394,9 +394,9 @@ ul {
 }
 
 .footer-logo .logo-img {
-    height: 120px; /* Further increased footer logo size */
+    height: 60px; /* Reduced desktop footer logo size by half */
     width: auto;
-    max-width: 500px;
+    max-width: 250px;
 }
 
 /* Mobile Logo Adjustments */
