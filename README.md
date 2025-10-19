@@ -48,7 +48,7 @@ dorfinex/
 ├── assets/
 │   └── images/            # Image assets
 │       ├── logo.svg       # Company logo
-│       └── favicon.svg    # Favicon
+│       └── small_logo_d.jpeg    # Favicon
 ├── sitemap.xml            # SEO sitemap
 ├── robots.txt             # SEO robots file
 ├── CNAME                  # GitHub Pages custom domain
