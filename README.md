@@ -34,15 +34,11 @@ dorfinex/
 ├── insights.html           # Insights/Blog page
 ├── contact.html            # Contact page
 ├── faq.html                # FAQ page
-├── privacy.html            # Privacy Policy
-├── terms.html              # Terms of Service
-├── cookies.html            # Cookie Policy
 ├── css/
 │   └── style.css          # Main stylesheet with GPU optimizations
 ├── js/
 │   ├── main.js            # JavaScript functionality
-│   ├── scroll-utils.js    # Scroll optimization utilities
-│   └── cookie-consent.js  # Cookie consent management
+│   └── scroll-utils.js    # Scroll optimization utilities
 ├── blog/                  # Blog posts
 │   ├── ai-transforming-customer-acquisition.html
 │   ├── marketing-personalization-scale.html
