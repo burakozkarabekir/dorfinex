@@ -394,9 +394,9 @@ ul {
 }
 
 .footer-logo .logo-img {
-    height: 90px; /* Increased footer logo size */
+    height: 120px; /* Further increased footer logo size */
     width: auto;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 /* Mobile Logo Adjustments */
@@ -407,8 +407,8 @@ ul {
     }
     
     .footer-logo .logo-img {
-        height: 60px; /* Increased mobile footer logo size */
-        max-width: 280px;
+        height: 80px; /* Increased mobile footer logo size */
+        max-width: 350px;
     }
 }
 
@@ -419,8 +419,8 @@ ul {
     }
     
     .footer-logo .logo-img {
-        height: 55px; /* Increased small mobile footer logo size */
-        max-width: 250px;
+        height: 70px; /* Increased small mobile footer logo size */
+        max-width: 300px;
     }
 }
 
