@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initOptimizedAnimations();
     initMobileOptimizations();
     initOptimizedScrollEffects();
+    initReadMoreButton();
     
     // Test all links
     testAllLinks();
@@ -350,4 +351,29 @@ console.log(`
 'color: #2563eb; font-size: 16px; font-weight: bold;',
 'color: transparent;',
 'color: #06b6d4; font-size: 14px;'
-); 
+);
+
+// Read more button functionality for Data Strategy & Modernization service
+function initReadMoreButton() {
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const servicePreview = document.querySelector('.service-preview');
+    const serviceDetails = document.querySelector('.service-details');
+    
+    if (readMoreBtn && servicePreview && serviceDetails) {
+        readMoreBtn.addEventListener('click', function() {
+            const isExpanded = serviceDetails.style.display !== 'none';
+            
+            if (isExpanded) {
+                // Collapse
+                serviceDetails.style.display = 'none';
+                servicePreview.style.display = 'block';
+                readMoreBtn.textContent = 'Read more';
+            } else {
+                // Expand
+                serviceDetails.style.display = 'block';
+                servicePreview.style.display = 'none';
+                readMoreBtn.textContent = 'Read less';
+            }
+        });
+    }
+} 
