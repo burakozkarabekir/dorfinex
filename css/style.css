@@ -873,6 +873,28 @@ ul {
     gap: 2rem;
 }
 
+/* For larger screens, show 3 columns and center the 7th service card on home page */
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Center the 7th service card (MarTech Solutions) in the middle column */
+    .services-grid .service-card:nth-child(7) {
+        grid-column: 2;
+        max-width: 100%;
+    }
+}
+
+/* For medium screens, center the 7th card when it wraps */
+@media (min-width: 700px) and (max-width: 1199px) {
+    .services-grid .service-card:nth-child(7) {
+        grid-column: 1 / -1;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
 .service-card {
     background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2rem;
@@ -1716,14 +1738,14 @@ ul {
     }
     
     /* Mobile-only footer links */
-    .mobile-only-links {
-        display: none; /* Hidden by default on desktop */
+    .footer-section.mobile-only-links {
+        display: none !important; /* Hidden by default on desktop */
     }
     
     /* Show mobile-only footer links on mobile */
     @media (max-width: 768px) {
-        .mobile-only-links {
-            display: block;
+        .footer-section.mobile-only-links {
+            display: block !important;
         }
     }
     
@@ -2183,6 +2205,28 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
+}
+
+/* For larger screens, show 3 columns and center the 7th service card */
+@media (min-width: 1300px) {
+    .services-detail-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Center the 7th service card (MarTech Solutions) in the middle column */
+    .services-detail-grid .service-detail-card:nth-child(7) {
+        grid-column: 2;
+        max-width: 100%;
+    }
+}
+
+/* For medium screens, center the 7th card when it wraps */
+@media (min-width: 800px) and (max-width: 1299px) {
+    .services-detail-grid .service-detail-card:nth-child(7) {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 .service-detail-card {
