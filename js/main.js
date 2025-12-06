@@ -360,20 +360,35 @@ function initReadMoreButton() {
     const serviceDetails = document.querySelector('.service-details');
     
     if (readMoreBtn && servicePreview && serviceDetails) {
-        readMoreBtn.addEventListener('click', function() {
-            const isExpanded = serviceDetails.style.display !== 'none';
+        readMoreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle classes
+            const isExpanded = serviceDetails.classList.contains('expanded');
             
             if (isExpanded) {
-                // Collapse
-                serviceDetails.style.display = 'none';
-                servicePreview.style.display = 'block';
+                // Collapse - hide details, show preview
+                serviceDetails.classList.remove('expanded');
+                servicePreview.classList.remove('hidden');
                 readMoreBtn.textContent = 'Read more';
             } else {
-                // Expand
-                serviceDetails.style.display = 'block';
-                servicePreview.style.display = 'none';
+                // Expand - show details, hide preview
+                serviceDetails.classList.add('expanded');
+                servicePreview.classList.add('hidden');
                 readMoreBtn.textContent = 'Read less';
+                
+                // Smooth scroll to keep button in view
+                setTimeout(() => {
+                    readMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
             }
+        });
+    } else {
+        console.warn('Read more button elements not found:', {
+            readMoreBtn: !!readMoreBtn,
+            servicePreview: !!servicePreview,
+            serviceDetails: !!serviceDetails
         });
     }
 } 

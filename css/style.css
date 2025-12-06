@@ -2262,11 +2262,21 @@ ul {
 /* Service preview and details for Read more functionality */
 .service-preview {
     margin-bottom: 1.5rem;
+    display: block;
 }
 
 .service-details {
     margin-bottom: 1.5rem;
+    display: none;
+}
+
+.service-details.expanded {
+    display: block !important;
     animation: fadeIn 0.3s ease-in;
+}
+
+.service-preview.hidden {
+    display: none !important;
 }
 
 @keyframes fadeIn {
