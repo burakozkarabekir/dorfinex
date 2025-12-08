@@ -267,7 +267,7 @@ For support or questions:
 - Removed duplicate folder structure
 - Cleaned up template files
 
-### Version 2.0.0 (2024-12-19)
+### Version 2.0.0 (2025-12-19)
 - Complete content transformation to digital consulting focus
 - New hero section with dual CTAs
 - Updated services and solutions
@@ -278,7 +278,7 @@ For support or questions:
 - Updated contact form and CTAs
 - Improved responsive design
 
-### Version 1.0.0 (2024-08-06)
+### Version 1.0.0 (2025-08-06)
 - Initial release
 - Responsive design
 - Interactive features
