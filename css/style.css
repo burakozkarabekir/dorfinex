@@ -832,7 +832,7 @@ ul {
 .vision-card {
     background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
     padding: 2.5rem;
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -1265,7 +1265,8 @@ ul {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -1680,10 +1681,13 @@ ul {
     /* Mobile services CTA */
     .mobile-services-cta {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
         width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     
     .mobile-services-cta .btn {
@@ -1695,11 +1699,14 @@ ul {
     /* Mobile insights CTA */
     .mobile-insights-cta {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 3rem;
         width: 100%;
         padding: 0 1rem;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     
     .mobile-insights-cta .btn {
