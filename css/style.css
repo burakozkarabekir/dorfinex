@@ -490,6 +490,10 @@ ul {
     align-items: center;
 }
 
+.mobile-beta-link {
+    display: none;
+}
+
 .nav-menu a {
     font-weight: 500;
     color: var(--text-dark);
@@ -1449,6 +1453,29 @@ ul {
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--gray-200);
         font-size: 1rem;
+    }
+
+    .mobile-beta-link {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-beta-link a {
+        border-bottom: 0;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        text-align: center;
+        background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #E2E8F0 100%);
+        font-weight: 700;
+    }
+
+    .mobile-beta-link a::after {
+        display: none;
+    }
+
+    .mobile-beta-link a:hover {
+        transform: none;
     }
     
     .dropdown-content {
