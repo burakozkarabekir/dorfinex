@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim — Dorfinex</title>
+    <meta name="description" content="Dorfinex ile iletişime geçin ve ölçülebilir büyümeyi birlikte tasarlayalım. Dijital danışmanlık, iş ortaklıkları, YZ ve analitik veya telekom/ICT konularında bize yazın.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-page="contact">
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logosu" class="loader-logo-img">
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="index-tr.html" aria-label="Dorfinex ana sayfa">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logosu" class="brand-logo">
+                <span class="logo-text">DORFINEX</span>
+            </a>
+            <div class="nav-links">
+                <a href="index-tr.html" class="nav-link" data-page="home"><span>Ana Sayfa</span></a>
+                <a href="about-tr.html" class="nav-link" data-page="about"><span>Hakkımızda</span></a>
+                <a href="services-tr.html" class="nav-link" data-page="services"><span>Hizmetler</span></a>
+                <a href="insights-tr.html" class="nav-link" data-page="insights"><span>İçgörüler</span></a>
+                <a href="faq-tr.html" class="nav-link" data-page="faq"><span>SSS</span></a>
+                <a href="contact-tr.html" class="nav-link cta-nav" data-page="contact"><span>İletişim</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="hero-background">
+                <div class="hologram-effect"></div>
+                <div class="gradient-orb orb-1"></div>
+                <div class="grid-overlay grid-layer-1"></div>
+                <div class="grid-overlay grid-layer-3"></div>
+            </div>
+            <div class="container page-hero-inner">
+                <div class="page-kicker">İletişim</div>
+                <h1 class="page-title">Ölçülebilir büyümeyi birlikte oluşturalım</h1>
+                <p class="page-subtitle">
+                    Büyümenizi hızlandırmaya hazır mısınız? Dijital danışmanlık ve teknoloji çözümleriyle işinizi nasıl dönüştürebileceğimizi konuşalım.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section alt">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-card card">
+                        <h2 class="content-title">Bizimle iletişime geçin</h2>
+                        <p class="content-text">
+                            Kurum, tedarikçi veya yenilikçi bir ekip olmanız fark etmez; inovasyon, strateji ve iş ortaklıklarıyla yeni fırsatları açığa çıkarmanıza yardımcı oluyoruz.
+                        </p>
+
+                        <div class="contact-meta">
+                            <div class="contact-meta-item">
+                                <div class="contact-meta-label">E-posta</div>
+                                <a class="contact-meta-link" href="mailto:contact@dorfinex.com">contact@dorfinex.com</a>
+                            </div>
+                            <div class="contact-meta-item">
+                                <div class="contact-meta-label">LinkedIn</div>
+                                <a class="contact-meta-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">Dorfinex'i takip edin</a>
+                            </div>
+                            <div class="contact-meta-item">
+                                <div class="contact-meta-label">Yanıt süresi</div>
+                                <div class="contact-meta-text">Genellikle 24 saat içinde yanıt veriyoruz.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form card">
+                        <h2 class="content-title">Bize mesaj gönderin</h2>
+                        <p class="content-text">Hedefinizi, kısıtlarınızı ve zaman planınızı paylaşın.</p>
+
+                        <form id="contactForm" class="js-contact-form" action="https://formspree.io/f/your-form-id" data-form-endpoint="https://formspree.io/f/your-form-id" method="POST" novalidate>
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label for="name">Ad Soyad <span class="req">*</span></label>
+                                    <input id="name" name="name" type="text" autocomplete="name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">İş e-postası <span class="req">*</span></label>
+                                    <input id="email" name="email" type="email" autocomplete="email" required>
+                                </div>
+                                <div class="field">
+                                    <label for="company">Şirket</label>
+                                    <input id="company" name="company" type="text" autocomplete="organization">
+                                </div>
+                                <div class="field">
+                                    <label for="phone">Telefon numarası</label>
+                                    <input id="phone" name="phone" type="tel" autocomplete="tel">
+                                </div>
+                                <div class="field field-full">
+                                    <label for="interest">İlgilendiğiniz hizmet</label>
+                                    <select id="interest" name="interest">
+                                        <option value="">Bir hizmet seçin</option>
+                                        <option value="digital-consulting">Dijital danışmanlık</option>
+                                        <option value="partnerships-ecosystem">İş ortaklıkları ve ekosistem</option>
+                                        <option value="tech-advisory">Teknoloji danışmanlığı</option>
+                                        <option value="ai-analytics">YZ ve analitik</option>
+                                        <option value="telecom-ict">Telekom ve ICT</option>
+                                        <option value="data-strategy">Veri stratejisi ve modernizasyon</option>
+                                        <option value="martech">MarTech çözümleri</option>
+                                        <option value="other">Diğer</option>
+                                    </select>
+                                </div>
+                                <div class="field field-full">
+                                    <label for="message">Nasıl yardımcı olabiliriz? <span class="req">*</span></label>
+                                    <textarea id="message" name="message" rows="6" required></textarea>
+                                </div>
+                            </div>
+
+                            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="btn-text">Mesaj gönder</span>
+                                    <span class="btn-glow"></span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <a class="btn btn-secondary" href="services-tr.html"><span class="btn-text">Hizmetleri incele</span></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logosu" class="footer-logo-img"><span>DORFINEX</span></div>
+                    <p class="footer-tagline">Stratejik İş Ortaklıklarıyla Dijital Büyümeye Yön Veriyoruz</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Şirket</h4>
+                        <a href="about-tr.html" class="footer-link">Hakkımızda</a>
+                        <a href="services-tr.html" class="footer-link">Hizmetler</a>
+                        <a href="insights-tr.html" class="footer-link">İçgörüler</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Hizmetler</h4>
+                        <a href="services-tr.html#digital-consulting" class="footer-link">Dijital danışmanlık</a>
+                        <a href="services-tr.html#partnerships-ecosystem" class="footer-link">İş ortaklıkları ve ekosistem</a>
+                        <a href="services-tr.html#data-strategy" class="footer-link">Veri stratejisi</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Bağlantılar</h4>
+                        <a href="faq-tr.html" class="footer-link">SSS</a>
+                        <a href="contact-tr.html" class="footer-link">İletişim</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="js-current-year">2026</span> Dorfinex. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

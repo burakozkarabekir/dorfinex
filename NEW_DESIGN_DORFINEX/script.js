@@ -57,6 +57,7 @@ function init() {
     const bodyPage = document.body?.dataset?.page;
     const pathPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const currentPage = bodyPage || pathPage.replace('.html', '');
+    const isTurkish = document.documentElement.lang.toLowerCase().startsWith('tr');
 
     document.querySelectorAll('.nav-link[data-page]').forEach((link) => {
         const isActive = link.getAttribute('data-page') === currentPage;
@@ -68,16 +69,39 @@ function init() {
     // Mobile navigation toggle with basic a11y state.
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.querySelector('.nav-links');
+    const translatablePages = new Set(['index.html', 'about.html', 'services.html', 'insights.html', 'faq.html', 'contact.html']);
 
-    if (navToggle && navLinks) {
-        if (!navLinks.querySelector('.lang-chip')) {
-            const langChip = document.createElement('span');
+    if (navLinks) {
+        const inBlog = window.location.pathname.includes('/blog/');
+        const rootPrefix = inBlog ? '../' : '';
+        const currentFile = pathPage || 'index.html';
+        const baseFile = currentFile.endsWith('-tr.html') ? currentFile.replace('-tr.html', '.html') : currentFile;
+        const trFile = baseFile.replace('.html', '-tr.html');
+        const hasTrVersion = translatablePages.has(baseFile);
+        const switchTarget = currentFile.endsWith('-tr.html')
+            ? `${rootPrefix}${baseFile}`
+            : `${rootPrefix}${hasTrVersion ? trFile : 'insights-tr.html'}`;
+        const switchLabel = currentFile.endsWith('-tr.html') ? 'EN' : 'TR';
+        const switchAriaLabel = currentFile.endsWith('-tr.html') ? 'Switch language to English' : 'Dili Turkceye gecir';
+        let langChip = navLinks.querySelector('.lang-chip');
+
+        if (!langChip) {
+            langChip = document.createElement('a');
             langChip.className = 'lang-chip';
-            langChip.textContent = 'EN / TR (Soon)';
-            langChip.setAttribute('aria-label', 'Language switcher coming soon');
             navLinks.appendChild(langChip);
         }
 
+        if (langChip instanceof HTMLAnchorElement) {
+            langChip.href = `${switchTarget}${window.location.hash || ''}`;
+        } else {
+            langChip.setAttribute('data-target', switchTarget);
+        }
+        langChip.textContent = switchLabel;
+        langChip.setAttribute('aria-label', switchAriaLabel);
+        langChip.setAttribute('title', switchAriaLabel);
+    }
+
+    if (navToggle && navLinks) {
         if (!navLinks.id) {
             navLinks.id = 'primary-navigation';
         }
@@ -97,6 +121,9 @@ function init() {
 
         document.querySelectorAll('.nav-link').forEach((link) => {
             link.addEventListener('click', () => setNavOpen(false));
+        });
+        navLinks.querySelectorAll('.lang-chip').forEach((langToggle) => {
+            langToggle.addEventListener('click', () => setNavOpen(false));
         });
 
         document.addEventListener('keydown', (event) => {
@@ -175,7 +202,9 @@ function init() {
 
             if (!ok) {
                 if (status) {
-                    status.textContent = 'Please fill in your name, a valid email, and your message.';
+                    status.textContent = isTurkish
+                        ? 'Lutfen adinizi, gecerli bir e-posta adresini ve mesajinizi girin.'
+                        : 'Please fill in your name, a valid email, and your message.';
                     status.classList.add('error');
                     status.classList.remove('success');
                 }
@@ -184,7 +213,9 @@ function init() {
 
             if (!endpoint || endpoint === '#') {
                 if (status) {
-                    status.textContent = 'Form endpoint is not configured yet. Add your provider endpoint in the form action.';
+                    status.textContent = isTurkish
+                        ? 'Form gonderim adresi henuz tanimli degil. Form action alanina endpoint ekleyin.'
+                        : 'Form endpoint is not configured yet. Add your provider endpoint in the form action.';
                     status.classList.add('error');
                     status.classList.remove('success');
                 }
@@ -193,7 +224,7 @@ function init() {
 
             if (submitButton) submitButton.disabled = true;
             if (status) {
-                status.textContent = 'Sending...';
+                status.textContent = isTurkish ? 'Gonderiliyor...' : 'Sending...';
                 status.classList.remove('error', 'success');
             }
 
@@ -209,14 +240,18 @@ function init() {
                 }
 
                 if (status) {
-                    status.textContent = 'Thanks. Your message has been sent.';
+                    status.textContent = isTurkish
+                        ? 'Tesekkurler. Mesajiniz gonderildi.'
+                        : 'Thanks. Your message has been sent.';
                     status.classList.remove('error');
                     status.classList.add('success');
                 }
                 form.reset();
             } catch (error) {
                 if (status) {
-                    status.textContent = 'Message could not be sent right now. Please try again in a few minutes.';
+                    status.textContent = isTurkish
+                        ? 'Mesaj su anda gonderilemedi. Lutfen birkac dakika sonra tekrar deneyin.'
+                        : 'Message could not be sent right now. Please try again in a few minutes.';
                     status.classList.add('error');
                     status.classList.remove('success');
                 }
