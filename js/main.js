@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
     initMobileMenu();
+    initMobileAppLayout();
     initSmoothScrolling();
     initContactForm();
     initOptimizedAnimations();
@@ -69,6 +70,74 @@ function initMobileMenu() {
             });
         }
     }
+}
+
+function initMobileAppLayout() {
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+    const applyMobileLayout = () => {
+        document.body.classList.toggle('mobile-app-mode', mobileQuery.matches);
+
+        if (mobileQuery.matches) {
+            createMobileAppDock();
+        } else {
+            const existingDock = document.querySelector('.mobile-app-dock');
+            if (existingDock) {
+                existingDock.remove();
+            }
+        }
+    };
+
+    applyMobileLayout();
+    if (typeof mobileQuery.addEventListener === 'function') {
+        mobileQuery.addEventListener('change', applyMobileLayout);
+    } else if (typeof mobileQuery.addListener === 'function') {
+        mobileQuery.addListener(applyMobileLayout);
+    }
+}
+
+function createMobileAppDock() {
+    if (document.querySelector('.mobile-app-dock')) {
+        return;
+    }
+
+    const currentPath = window.location.pathname.toLowerCase();
+    const currentFile = currentPath.endsWith('/') ? 'index.html' : (currentPath.split('/').pop() || 'index.html');
+
+    const dockItems = [
+        { href: 'index.html', label: 'Home', icon: 'fa-house' },
+        { href: 'services.html', label: 'Services', icon: 'fa-layer-group' },
+        { href: 'insights.html', label: 'Insights', icon: 'fa-chart-line' },
+        { href: 'contact.html', label: 'Contact', icon: 'fa-paper-plane' },
+        { href: 'NEW_DESIGN_DORFINEX/index.html', label: 'Beta', icon: 'fa-flask' }
+    ];
+
+    const dock = document.createElement('nav');
+    dock.className = 'mobile-app-dock';
+    dock.setAttribute('aria-label', 'Mobile app navigation');
+
+    dockItems.forEach((item) => {
+        const anchor = document.createElement('a');
+        anchor.className = 'mobile-app-dock__item';
+        anchor.href = item.href;
+        anchor.innerHTML = `
+            <i class="fa-solid ${item.icon}" aria-hidden="true"></i>
+            <span>${item.label}</span>
+        `;
+
+        const isActive =
+            currentFile === item.href ||
+            (item.href === 'index.html' && (currentFile === 'about.html' || currentFile === 'faq.html')) ||
+            (item.href === 'insights.html' && currentPath.includes('/blog/'));
+
+        if (isActive) {
+            anchor.classList.add('is-active');
+        }
+
+        dock.appendChild(anchor);
+    });
+
+    document.body.appendChild(dock);
 }
 
 // Smooth scrolling for navigation links

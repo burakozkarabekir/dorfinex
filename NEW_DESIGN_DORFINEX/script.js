@@ -70,6 +70,14 @@ function init() {
     const navLinks = document.querySelector('.nav-links');
 
     if (navToggle && navLinks) {
+        if (!navLinks.querySelector('.lang-chip')) {
+            const langChip = document.createElement('span');
+            langChip.className = 'lang-chip';
+            langChip.textContent = 'EN / TR (Soon)';
+            langChip.setAttribute('aria-label', 'Language switcher coming soon');
+            navLinks.appendChild(langChip);
+        }
+
         if (!navLinks.id) {
             navLinks.id = 'primary-navigation';
         }
