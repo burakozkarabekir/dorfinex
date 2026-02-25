@@ -112,6 +112,7 @@ function init() {
         const setNavOpen = (isOpen) => {
             navLinks.classList.toggle('active', isOpen);
             navToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('nav-open', isOpen);
         };
 
         navToggle.addEventListener('click', () => {
@@ -399,9 +400,11 @@ function init() {
         });
     });
 
-    // Performance: reduce motion for users who prefer it.
+    // Accessibility: disable animations for users who prefer reduced motion.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        gsap.globalTimeline.timeScale(0.5);
+        gsap.globalTimeline.clear();
+        gsap.set('*', { clearProps: 'all' });
+        ScrollTrigger.getAll().forEach(t => t.kill());
     }
 }
 
