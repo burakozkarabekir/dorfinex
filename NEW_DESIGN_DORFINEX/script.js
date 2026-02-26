@@ -510,9 +510,40 @@ function init() {
     }
 }
 
+// ========== Compact services — scroll glow ==========
+function initCompactScrollGlow() {
+    const strip = document.querySelector('.services-compact');
+    if (!strip) return;
+    const cards = strip.querySelectorAll('.compact-card');
+    if (!cards.length) return;
+
+    function updateGlow() {
+        const stripRect = strip.getBoundingClientRect();
+        const center = stripRect.left + stripRect.width / 2;
+
+        cards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + cardRect.width / 2;
+            const dist = Math.abs(center - cardCenter);
+            const maxDist = stripRect.width / 2;
+
+            if (dist < maxDist * 0.65) {
+                card.classList.add('glow');
+            } else {
+                card.classList.remove('glow');
+            }
+        });
+    }
+
+    strip.addEventListener('scroll', updateGlow, { passive: true });
+    window.addEventListener('resize', updateGlow, { passive: true });
+    updateGlow();
+}
+
 // Start initialization
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => { init(); initCompactScrollGlow(); });
 } else {
     init();
+    initCompactScrollGlow();
 }

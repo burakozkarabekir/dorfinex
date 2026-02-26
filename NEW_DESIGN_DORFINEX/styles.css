@@ -434,7 +434,7 @@ body[data-page="home"] .hero-content {
 .title-line {
     display: block;
     margin-bottom: 0;
-    padding: 0.05em 0;
+    padding: 0.1em 0 0.15em;
 }
 
 .title-number {
@@ -1381,6 +1381,113 @@ button:disabled {
 
 .tech-glow {
     display: none;
+}
+
+/* ========== Compact Services — Horizontal Scroll Strip ========== */
+.services-compact {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    margin-bottom: var(--spacing-md);
+    scrollbar-width: none;
+}
+
+.services-compact::-webkit-scrollbar {
+    display: none;
+}
+
+.compact-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    min-width: max-content;
+    white-space: nowrap;
+    background: rgba(30, 111, 217, 0.04);
+    border: 1.5px solid rgba(30, 111, 217, 0.3);
+    border-radius: 100px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 rgba(30, 111, 217, 0);
+}
+
+.compact-card.glow {
+    border-color: rgba(30, 111, 217, 0.7);
+    box-shadow: 0 0 14px rgba(30, 111, 217, 0.2), inset 0 0 8px rgba(30, 111, 217, 0.05);
+}
+
+.compact-card:hover {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(30, 111, 217, 0.35), 0 4px 20px rgba(30, 111, 217, 0.2);
+}
+
+.compact-card:hover .compact-num {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.compact-card:hover .compact-arrow {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.compact-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    transition: var(--transition);
+}
+
+.compact-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.compact-arrow {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--color-text-tertiary);
+    transition: var(--transition);
+}
+
+/* ========== Shiny Button ========== */
+.btn-shiny {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shiny::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(30, 111, 217, 0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shiny-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shiny-sweep {
+    0%, 100% { left: -75%; }
+    50% { left: 125%; }
 }
 
 /* ========== Section Banner Image ========== */
