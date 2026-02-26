@@ -1,3 +1,120 @@
+function initParticleCanvas() {
+    const canvas = document.getElementById('heroParticles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const colors = ['#1E6FD9', '#4A94ED', '#1456A8'];
+    let mouse = { x: -9999, y: -9999 };
+    let particles = [];
+    let animId;
+
+    function resize() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+    }
+
+    function createParticles() {
+        const rect = canvas.getBoundingClientRect();
+        particles = [];
+        const count = window.innerWidth <= 768 ? 68 : 270;
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * rect.width,
+                y: Math.random() * rect.height,
+                vx: (Math.random() - 0.5) * 3.6,
+                vy: (Math.random() - 0.5) * 3.6,
+                r: Math.random() * 2 + 0.8,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: Math.random() * 0.4 + 0.15
+            });
+        }
+    }
+
+    function draw() {
+        const rect = canvas.getBoundingClientRect();
+        const w = rect.width;
+        const h = rect.height;
+        ctx.clearRect(0, 0, w, h);
+
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            // Constant drift — 2x faster idle movement
+            p.vx += (Math.random() - 0.5) * 0.24;
+            p.vy += (Math.random() - 0.5) * 0.24;
+
+            // Mouse repulsion — stronger scatter
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 150 && dist > 0) {
+                const force = (150 - dist) / 150 * 1.8;
+                p.vx += (dx / dist) * force;
+                p.vy += (dy / dist) * force;
+            }
+
+            p.x += p.vx;
+            p.y += p.vy;
+            // Damping — minimal friction, particles stay fast
+            p.vx *= 0.99;
+            p.vy *= 0.99;
+
+            // Edge wrapping
+            if (p.x < 0) p.x = w;
+            if (p.x > w) p.x = 0;
+            if (p.y < 0) p.y = h;
+            if (p.y > h) p.y = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            ctx.fill();
+
+            // Connection lines
+            for (let j = i + 1; j < particles.length; j++) {
+                const q = particles[j];
+                const cx = p.x - q.x;
+                const cy = p.y - q.y;
+                const cd = Math.sqrt(cx * cx + cy * cy);
+                if (cd < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(q.x, q.y);
+                    ctx.strokeStyle = p.color;
+                    ctx.globalAlpha = (1 - cd / 120) * 0.15;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+        ctx.globalAlpha = 1;
+        animId = requestAnimationFrame(draw);
+    }
+
+    const hero = document.getElementById('hero');
+    if (hero) {
+        hero.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        hero.addEventListener('mouseleave', () => {
+            mouse.x = -9999;
+            mouse.y = -9999;
+        });
+    }
+
+    window.addEventListener('resize', () => { resize(); createParticles(); });
+    resize();
+    createParticles();
+    draw();
+
+    return () => { cancelAnimationFrame(animId); };
+}
+
 function init() {
     const hasGSAP = typeof gsap !== 'undefined';
     const hasScrollTrigger = typeof ScrollTrigger !== 'undefined';
@@ -263,18 +380,29 @@ function init() {
         });
     });
 
-    if (!hasGSAP) return;
+    if (!hasGSAP) {
+        // Remove clip-path so content is visible without GSAP
+        document.querySelectorAll('.hero-badge, .title-line, .hero-subtitle, .hero-actions .btn, .scroll-indicator').forEach(el => {
+            el.style.clipPath = 'none';
+        });
+        initParticleCanvas();
+        return;
+    }
 
     // Hero / page header animations (only if present)
     const hasHero = document.querySelector('.hero');
     if (hasHero) {
         const heroTimeline = gsap.timeline({ delay: 1.0 });
+        const reveal = { clipPath: 'inset(0% 0 0 0)', ease: 'power3.out' };
         heroTimeline
-            .from('.hero-badge', { opacity: 0, y: 18, duration: 0.7, ease: 'power2.out' })
-            .from('.hero-title .title-line', { opacity: 0, y: 18, duration: 0.75, stagger: 0.08, ease: 'power2.out' }, '-=0.35')
-            .from('.hero-subtitle', { opacity: 0, y: 14, duration: 0.6, ease: 'power2.out' }, '-=0.35')
-            .from('.hero-actions .btn', { opacity: 0, y: 12, duration: 0.5, stagger: 0.08, ease: 'power2.out' }, '-=0.25')
-            .from('.scroll-indicator', { opacity: 0, y: 10, duration: 0.6, ease: 'power2.out' }, '-=0.35');
+            .to('.hero-badge', { ...reveal, duration: 0.5 })
+            .to('.title-line-1', { ...reveal, duration: 0.45 }, '-=0.2')
+            .to('.title-line-2', { ...reveal, duration: 0.45 }, '-=0.15')
+            .to('.title-line-3', { ...reveal, duration: 0.45 }, '-=0.15')
+            .to('.hero-subtitle', { ...reveal, duration: 0.4 }, '-=0.15')
+            .to('.hero-actions .btn', { ...reveal, duration: 0.35, stagger: 0.08 }, '-=0.1')
+            .to('.scroll-indicator', { ...reveal, duration: 0.4 }, '-=0.15');
+        initParticleCanvas();
     }
 
     const pageHero = document.querySelector('.page-hero');
@@ -289,47 +417,14 @@ function init() {
         });
     }
 
-    // Animate gradient orbs.
-    gsap.to('.orb-1', { x: 60, y: -40, duration: 24, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to('.orb-2', { x: -50, y: 40, duration: 28, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to('.orb-3', { x: 35, y: -28, duration: 22, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-
-    // Animate grid overlays with parallax effect.
-    const gridOverlays = document.querySelectorAll('.grid-overlay');
-
-    if (gridOverlays.length > 0) {
+    // Dot-matrix mouse parallax
+    const dotMatrix = document.querySelector('.dot-matrix');
+    if (dotMatrix) {
         document.addEventListener('mousemove', (event) => {
-            const mouseX = event.clientX / window.innerWidth;
-            const mouseY = event.clientY / window.innerHeight;
-
-            gridOverlays.forEach((grid, index) => {
-                const speed = (index + 1) * 0.5;
-                const moveX = (mouseX - 0.5) * 20 * speed;
-                const moveY = (mouseY - 0.5) * 20 * speed;
-
-                gsap.to(grid, {
-                    x: moveX,
-                    y: moveY,
-                    duration: 1,
-                    ease: 'power1.out'
-                });
-            });
+            const mx = (event.clientX / window.innerWidth - 0.5) * 5;
+            const my = (event.clientY / window.innerHeight - 0.5) * 5;
+            gsap.to(dotMatrix, { x: mx, y: my, duration: 1, ease: 'power1.out' });
         });
-
-        if (hasScrollTrigger) {
-            gridOverlays.forEach((grid, index) => {
-                gsap.to(grid, {
-                    y: (index + 1) * 50,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: '.hero',
-                        start: 'top top',
-                        end: 'bottom top',
-                        scrub: true
-                    }
-                });
-            });
-        }
     }
 
     if (hasScrollTrigger) {
@@ -405,6 +500,10 @@ function init() {
         gsap.globalTimeline.clear();
         gsap.set('*', { clearProps: 'all' });
         ScrollTrigger.getAll().forEach(t => t.kill());
+        // Remove clip-path initial states so content is visible
+        document.querySelectorAll('.hero-badge, .title-line, .hero-subtitle, .hero-actions .btn, .scroll-indicator').forEach(el => {
+            el.style.clipPath = 'none';
+        });
     }
 }
 
