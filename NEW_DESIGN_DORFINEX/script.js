@@ -4,6 +4,7 @@ function initParticleCanvas() {
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
     const colors = ['#1E6FD9', '#4A94ED', '#1456A8'];
+    const isMobile = window.innerWidth <= 768;
     let mouse = { x: -9999, y: -9999 };
     let particles = [];
     let animId;
@@ -18,13 +19,14 @@ function initParticleCanvas() {
     function createParticles() {
         const rect = canvas.getBoundingClientRect();
         particles = [];
-        const count = window.innerWidth <= 768 ? 68 : 270;
+        const count = isMobile ? 68 : 270;
+        const initSpeed = isMobile ? 2.52 : 3.6;
         for (let i = 0; i < count; i++) {
             particles.push({
                 x: Math.random() * rect.width,
                 y: Math.random() * rect.height,
-                vx: (Math.random() - 0.5) * 3.6,
-                vy: (Math.random() - 0.5) * 3.6,
+                vx: (Math.random() - 0.5) * initSpeed,
+                vy: (Math.random() - 0.5) * initSpeed,
                 r: Math.random() * 2 + 0.8,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 alpha: Math.random() * 0.4 + 0.15
@@ -41,9 +43,10 @@ function initParticleCanvas() {
         for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
 
-            // Constant drift — 2x faster idle movement
-            p.vx += (Math.random() - 0.5) * 0.24;
-            p.vy += (Math.random() - 0.5) * 0.24;
+            // Constant drift — mobile %30 slower
+            const drift = isMobile ? 0.168 : 0.24;
+            p.vx += (Math.random() - 0.5) * drift;
+            p.vy += (Math.random() - 0.5) * drift;
 
             // Mouse repulsion — stronger scatter
             const dx = p.x - mouse.x;
