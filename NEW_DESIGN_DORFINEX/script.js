@@ -191,35 +191,7 @@ function init() {
     const navLinks = document.querySelector('.nav-links');
     const translatablePages = new Set(['index.html', 'about.html', 'services.html', 'insights.html', 'faq.html', 'contact.html']);
 
-    if (navLinks) {
-        const inBlog = window.location.pathname.includes('/blog/');
-        const rootPrefix = inBlog ? '../' : '';
-        const currentFile = pathPage || 'index.html';
-        const baseFile = currentFile.endsWith('-tr.html') ? currentFile.replace('-tr.html', '.html') : currentFile;
-        const trFile = baseFile.replace('.html', '-tr.html');
-        const hasTrVersion = translatablePages.has(baseFile);
-        const switchTarget = currentFile.endsWith('-tr.html')
-            ? `${rootPrefix}${baseFile}`
-            : `${rootPrefix}${hasTrVersion ? trFile : 'insights-tr.html'}`;
-        const switchLabel = currentFile.endsWith('-tr.html') ? 'EN' : 'TR';
-        const switchAriaLabel = currentFile.endsWith('-tr.html') ? 'Switch language to English' : 'Dili Turkceye gecir';
-        let langChip = navLinks.querySelector('.lang-chip');
-
-        if (!langChip) {
-            langChip = document.createElement('a');
-            langChip.className = 'lang-chip';
-            navLinks.appendChild(langChip);
-        }
-
-        if (langChip instanceof HTMLAnchorElement) {
-            langChip.href = `${switchTarget}${window.location.hash || ''}`;
-        } else {
-            langChip.setAttribute('data-target', switchTarget);
-        }
-        langChip.textContent = switchLabel;
-        langChip.setAttribute('aria-label', switchAriaLabel);
-        langChip.setAttribute('title', switchAriaLabel);
-    }
+    // Language switcher disabled
 
     if (navToggle && navLinks) {
         if (!navLinks.id) {
