@@ -43,10 +43,38 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link" data-page="home"><span>Home</span></a>
-                <a href="about.html" class="nav-link" data-page="about"><span>About</span></a>
-                <a href="services.html" class="nav-link" data-page="services"><span>Services</span></a>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link" data-page="about"><span>About</span></a>
+                    <div class="nav-dropdown">
+                        <a href="about.html#mission">Mission</a>
+                        <a href="about.html#vision">Vision</a>
+                        <a href="about.html#what-makes-us-different">What Makes Us Different</a>
+                        <a href="about.html#who-we-serve">Who We Serve</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link" data-page="services"><span>Services</span></a>
+                    <div class="nav-dropdown">
+                        <a href="services.html#digital-consulting">Digital Consulting</a>
+                        <a href="services.html#partnerships-ecosystem">Partnerships &amp; Ecosystem</a>
+                        <a href="services.html#tech-advisory">Tech Advisory</a>
+                        <a href="services.html#ai-analytics">AI &amp; Analytics</a>
+                        <a href="services.html#data-strategy">Data Strategy</a>
+                        <a href="services.html#telecom-ict">Telecom &amp; ICT</a>
+                        <a href="services.html#martech">MarTech Solutions</a>
+                        <a href="services.html#billing-revenue">Billing &amp; Revenue</a>
+                    </div>
+                </div>
                 <a href="insights.html" class="nav-link" data-page="insights"><span>Insights</span></a>
-                <a href="faq.html" class="nav-link" data-page="faq"><span>FAQ</span></a>
+                <div class="nav-item">
+                    <a href="faq.html" class="nav-link" data-page="faq"><span>FAQ</span></a>
+                    <div class="nav-dropdown">
+                        <a href="faq.html#general">General Questions</a>
+                        <a href="faq.html#technical">Technical Questions</a>
+                        <a href="faq.html#services-solutions">Services &amp; Solutions</a>
+                        <a href="faq.html#engagement-pricing">Engagement &amp; Pricing</a>
+                    </div>
+                </div>
                 <a href="contact.html" class="nav-link cta-nav" data-page="contact"><span>Contact</span></a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -76,7 +104,7 @@
             <div class="container">
                 <div class="faq-layout">
                     <div class="faq-group">
-                        <h2 class="faq-group-title">General questions</h2>
+                        <h2 class="faq-group-title" id="general">General questions</h2>
 
                         <div class="faq-item">
                             <button class="faq-trigger" type="button">
@@ -116,7 +144,7 @@
                     </div>
 
                     <div class="faq-group">
-                        <h2 class="faq-group-title">Technical questions</h2>
+                        <h2 class="faq-group-title" id="technical">Technical questions</h2>
 
                         <div class="faq-item">
                             <button class="faq-trigger" type="button">
@@ -185,7 +213,7 @@
                     </div>
 
                     <div class="faq-group">
-                        <h2 class="faq-group-title">Services &amp; solutions</h2>
+                        <h2 class="faq-group-title" id="services-solutions">Services &amp; solutions</h2>
 
                         <div class="faq-item">
                             <button class="faq-trigger" type="button">
@@ -225,7 +253,7 @@
                     </div>
 
                     <div class="faq-group">
-                        <h2 class="faq-group-title">Engagement &amp; pricing</h2>
+                        <h2 class="faq-group-title" id="engagement-pricing">Engagement &amp; pricing</h2>
 
                         <div class="faq-item">
                             <button class="faq-trigger" type="button">

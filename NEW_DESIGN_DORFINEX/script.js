@@ -233,6 +233,20 @@ function init() {
         });
     }
 
+    // Mobile dropdown toggle
+    document.querySelectorAll('.nav-item > .nav-link').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const item = link.closest('.nav-item');
+                document.querySelectorAll('.nav-item').forEach((other) => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            }
+        });
+    });
+
     // Smooth scroll for same-page anchors.
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function onAnchorClick(event) {
