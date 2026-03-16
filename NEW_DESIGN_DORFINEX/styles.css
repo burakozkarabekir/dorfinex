@@ -187,10 +187,10 @@ body {
 }
 
 .logo-text {
-    font-size: 1.1rem;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0.08em;
+    font-size: 1.3rem;
+    font-weight: 800;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.1em;
     color: var(--color-text-primary);
 }
 
@@ -252,9 +252,10 @@ body {
 .nav-link {
     color: var(--color-text-secondary);
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
+    font-weight: 800;
+    font-size: 0.95rem;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.03em;
     transition: var(--transition);
     position: relative;
 }
@@ -1035,10 +1036,10 @@ body[data-page="home"] .hero-badge {
 }
 
 .service-kicker {
-    color: var(--color-teal);
-    font-weight: 500;
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
+    color: #1456A8;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: var(--spacing-xs);
 }
