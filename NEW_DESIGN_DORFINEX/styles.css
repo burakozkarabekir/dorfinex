@@ -47,6 +47,12 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Anchor scroll offset to account for fixed navbar */
+[id] {
+    scroll-margin-top: 120px;
 }
 
 body {
@@ -1017,8 +1023,9 @@ body[data-page="home"] .hero-badge {
 /* ========== Services (dedicated page) ========== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.25rem;
+    padding-bottom: 1rem;
 }
 
 .service-card {
@@ -1033,6 +1040,7 @@ body[data-page="home"] .hero-badge {
 .service-card:hover {
     border-color: rgba(43, 188, 192, 0.4);
     box-shadow: 0 4px 16px rgba(43, 188, 192, 0.1);
+    transform: translateY(-2px);
 }
 
 .service-kicker {
@@ -1445,9 +1453,7 @@ button:disabled {
 .services-compact {
     display: flex;
     gap: 0.75rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 0.5rem;
     margin-bottom: var(--spacing-md);
@@ -1456,6 +1462,22 @@ button:disabled {
 
 .services-compact::-webkit-scrollbar {
     display: none;
+}
+
+.services-compact .compact-track {
+    display: flex;
+    gap: 0.75rem;
+    animation: compactMarquee 25s linear infinite;
+    width: max-content;
+}
+
+.services-compact:hover .compact-track {
+    animation-play-state: paused;
+}
+
+@keyframes compactMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .compact-card {

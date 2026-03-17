@@ -247,6 +247,19 @@ function init() {
         });
     });
 
+    // Smooth scroll helper
+    function smoothScrollTo(target) {
+        if (hasGSAP && hasScrollToPlugin) {
+            gsap.to(window, {
+                duration: 0.9,
+                scrollTo: { y: target, offsetY: 100 },
+                ease: 'power2.inOut'
+            });
+        } else {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
     // Smooth scroll for same-page anchors.
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function onAnchorClick(event) {
@@ -255,17 +268,55 @@ function init() {
             if (!target) return;
 
             event.preventDefault();
-            if (hasGSAP && hasScrollToPlugin) {
-                gsap.to(window, {
-                    duration: 0.9,
-                    scrollTo: { y: target, offsetY: 90 },
-                    ease: 'power2.inOut'
-                });
-            } else {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            smoothScrollTo(target);
         });
     });
+
+    // Handle nav dropdown links that point to the current page with a hash
+    // e.g., clicking "services.html#digital-consulting" while on services.html
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-dropdown a, .footer-link').forEach((anchor) => {
+        const href = anchor.getAttribute('href');
+        if (!href || !href.includes('#')) return;
+        const [file, hash] = href.split('#');
+        if (file === currentFile && hash) {
+            anchor.addEventListener('click', function(event) {
+                const target = document.getElementById(hash);
+                if (!target) return;
+                event.preventDefault();
+                smoothScrollTo(target);
+            });
+        }
+    });
+
+    // Handle hash navigation on page load (cross-page links like services.html#digital-consulting)
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        // Wait for page to fully render, then scroll to the target
+        const scrollToHash = () => {
+            const target = document.querySelector(hash);
+            if (!target) return;
+            // Temporarily disable smooth scroll for instant jump
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                if (hasGSAP && hasScrollToPlugin) {
+                    gsap.to(window, {
+                        duration: 0.9,
+                        scrollTo: { y: target, offsetY: 100 },
+                        ease: 'power2.inOut'
+                    });
+                } else {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 200);
+        };
+        // Run after loader hides
+        if (document.readyState === 'complete') {
+            scrollToHash();
+        } else {
+            window.addEventListener('load', () => setTimeout(scrollToHash, 600), { once: true });
+        }
+    }
 
     // FAQ accordion
     document.querySelectorAll('.faq-item').forEach((item, index) => {
