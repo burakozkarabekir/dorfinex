@@ -3,246 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Dorfinex — Digital Consulting & Partnerships</title>
-    <meta name="description" content="Explore our comprehensive digital consulting services including AI & Analytics, Tech Advisory, Partnerships, and Telecom & ICT solutions.">
-    
+    <title>Services , Dorfinex</title>
+    <meta name="description" content="Dorfinex services: digital consulting, partnerships, tech advisory, AI & analytics, data modernization, telecom & ICT, and MarTech solutions.">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="any">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="32x32">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="16x16">
-    <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="48x48">
-    <link rel="shortcut icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/small_logo_d.jpeg">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/small_logo_d.jpeg">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Services , Dorfinex">
+    <meta property="og:description" content="Dorfinex services: digital consulting, partnerships, tech advisory, AI & analytics, data modernization, telecom & ICT, and MarTech solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dorfinex.com/services">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <!-- Top bar kept for design consistency -->
-                </div>
+<body data-page="services">
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="loader-logo-img">
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
             </div>
         </div>
-        
-        <!-- Main Header -->
-        <div class="main-header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/dorfinex_llatest_logo_seffafpreview.png" alt="Dorfinex" class="logo-img">
-                        </a>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="index.html" aria-label="Dorfinex home">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="brand-logo">
+                <span class="logo-text">DORFINEX</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-page="home"><span>Home</span></a>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link" data-page="about"><span>About</span></a>
+                    <div class="nav-dropdown">
+                        <a href="about.html#mission">Mission</a>
+                        <a href="about.html#mission">Vision</a>
+                        <a href="about.html#what-makes-us-different">What Makes Us Different</a>
+                        <a href="about.html#who-we-serve">Who We Serve</a>
                     </div>
-                    
-                    <nav class="main-nav">
-                        <ul class="nav-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="services.html" class="active">Services</a></li>
-                            <li><a href="insights.html">Insights</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link" data-page="services"><span>Services</span></a>
+                    <div class="nav-dropdown">
+                        <a href="services.html#digital-consulting">Digital Consulting</a>
+                        <a href="services.html#partnerships-ecosystem">Partnerships &amp; Ecosystem</a>
+                        <a href="services.html#tech-advisory">Tech Advisory</a>
+                        <a href="services.html#ai-analytics">AI &amp; Analytics</a>
+                        <a href="services.html#data-strategy">Data Strategy</a>
+                        <a href="services.html#telecom-ict">Telecom &amp; ICT</a>
+                        <a href="services.html#martech">MarTech Solutions</a>
+                        <a href="services.html#billing-revenue">Billing &amp; Revenue</a>
+                    </div>
+                </div>
+                <a href="insights.html" class="nav-link" data-page="insights"><span>Insights</span></a>
+                <div class="nav-item">
+                    <a href="faq.html" class="nav-link" data-page="faq"><span>FAQ</span></a>
+                    <div class="nav-dropdown">
+                        <a href="faq.html#general">General Questions</a>
+                        <a href="faq.html#technical">Technical Questions</a>
+                        <a href="faq.html#services-solutions">Services &amp; Solutions</a>
+                        <a href="faq.html#engagement-pricing">Engagement &amp; Pricing</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link cta-nav" data-page="contact"><span>Contact</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <img src="assets/images/services-hero.jpg" alt="" class="page-hero-img" loading="eager">
+            <div class="hero-background">
+                <div class="hologram-effect"></div>
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="grid-overlay grid-layer-1"></div>
+                <div class="grid-overlay grid-layer-4"></div>
+            </div>
+            <div class="container page-hero-inner">
+                <div class="page-kicker">Services</div>
+                <h1 class="page-title">E2E delivery with measurable outcomes</h1>
+                <p class="page-subtitle">
+                    Dorfinex helps teams turn strategy into impact through digital consulting, partner ecosystems, and data-driven execution.
+                </p>
+            </div>
+        </section>
+
+        <section class="services-nav-section">
+            <div class="container">
+                <div class="services-compact">
+                    <div class="compact-track">
+                    <a class="compact-card" href="#digital-consulting">
+                        <span class="compact-title">Digital consulting</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#partnerships-ecosystem">
+                        <span class="compact-title">Partnerships &amp; ecosystem</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#tech-advisory">
+                        <span class="compact-title">Tech advisory</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#ai-analytics">
+                        <span class="compact-title">AI &amp; analytics</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#data-strategy">
+                        <span class="compact-title">Data strategy &amp; modernization</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#telecom-ict">
+                        <span class="compact-title">Telecom &amp; ICT</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#martech">
+                        <span class="compact-title">MarTech solutions</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#billing-revenue">
+                        <span class="compact-title">Billing &amp; Revenue</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <!-- Duplicate for seamless marquee -->
+                    <a class="compact-card" href="#digital-consulting" aria-hidden="true">
+                        <span class="compact-title">Digital consulting</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#partnerships-ecosystem" aria-hidden="true">
+                        <span class="compact-title">Partnerships &amp; ecosystem</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#tech-advisory" aria-hidden="true">
+                        <span class="compact-title">Tech advisory</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#ai-analytics" aria-hidden="true">
+                        <span class="compact-title">AI &amp; analytics</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#data-strategy" aria-hidden="true">
+                        <span class="compact-title">Data strategy &amp; modernization</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#telecom-ict" aria-hidden="true">
+                        <span class="compact-title">Telecom &amp; ICT</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#martech" aria-hidden="true">
+                        <span class="compact-title">MarTech solutions</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a class="compact-card" href="#billing-revenue" aria-hidden="true">
+                        <span class="compact-title">Billing &amp; Revenue</span>
+                        <svg class="compact-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="services-grid">
+                    <article class="service-card card" id="digital-consulting">
+                        <img src="assets/images/svc-digital-consulting.jpg" alt="Digital consulting" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Digital consulting</div>
+                        <h2 class="service-title">Growth strategy with measurable outcomes</h2>
+                        <p class="service-text">Growth strategy, funnel optimization, GTM plans, and measurable execution,built for delivery, not decks.</p>
+                        <ul class="service-list">
+                            <li>Growth diagnostics + KPI design</li>
+                            <li>GTM + channel strategy</li>
+                            <li>Experimentation roadmap</li>
                         </ul>
-                    </nav>
-                    
-                    <div class="header-actions">
-                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="social-link linkedin-link" aria-label="Follow Dorfinex on LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                    </article>
+
+                    <article class="service-card card" id="partnerships-ecosystem">
+                        <img src="assets/images/svc-partnerships.jpg" alt="Partnerships" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Partnerships &amp; ecosystem</div>
+                        <h2 class="service-title">Win–win partnerships at scale</h2>
+                        <p class="service-text">Identify, negotiate, and operationalize partnerships that unlock distribution, speed, and leverage.</p>
+                        <ul class="service-list">
+                            <li>Partner strategy + target list</li>
+                            <li>Commercial model design</li>
+                            <li>Operating model + enablement</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card card" id="tech-advisory">
+                        <img src="assets/images/svc-tech-advisory.jpg" alt="Tech advisory" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Tech advisory</div>
+                        <h2 class="service-title">Architect decisions into roadmaps</h2>
+                        <p class="service-text">Vendor selection, solution architecture, and roadmap alignment so teams move fast with confidence.</p>
+                        <ul class="service-list">
+                            <li>Vendor evaluation + selection</li>
+                            <li>Solution architecture reviews</li>
+                            <li>Delivery roadmap alignment</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card card" id="ai-analytics">
+                        <img src="assets/images/svc-ai-analytics.jpg" alt="AI and analytics" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">AI & analytics</div>
+                        <h2 class="service-title">Personalization, segmentation, ROI</h2>
+                        <p class="service-text">Use AI/ML and analytics to drive measurable uplift across acquisition, retention, and monetization.</p>
+                        <ul class="service-list">
+                            <li>Use-case discovery + prioritization</li>
+                            <li>Model + measurement design</li>
+                            <li>Activation into journeys</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card card" id="data-strategy">
+                        <img src="assets/images/svc-data-strategy.jpg" alt="Data strategy" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Data strategy & modernization</div>
+                        <h2 class="service-title">Data that teams can actually use</h2>
+                        <p class="service-text">Enterprise data architecture, BI modernization, and automated pipelines that enable speed and trust.</p>
+                        <ul class="service-list">
+                            <li>Target data architecture</li>
+                            <li>BI platform modernization</li>
+                            <li>Automated data pipelines</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card card" id="telecom-ict">
+                        <img src="assets/images/svc-telecom.jpg" alt="Telecom and ICT" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Telecom & ICT</div>
+                        <h2 class="service-title">Domain depth for operators and B2B</h2>
+                        <p class="service-text">Product and channel strategies for service providers and enterprise solutions,built on deep domain DNA.</p>
+                        <ul class="service-list">
+                            <li>Product + packaging strategy</li>
+                            <li>Channel + partner motions</li>
+                            <li>Enterprise growth playbooks</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card card" id="martech">
+                        <img src="assets/images/svc-martech.jpg" alt="MarTech solutions" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">MarTech solutions</div>
+                        <h2 class="service-title">Orchestrate journeys at scale</h2>
+                        <p class="service-text">MarTech stack optimization, automation, and customer journey orchestration to scale personalization with control.</p>
+                        <ul class="service-list">
+                            <li>Stack audit + optimization</li>
+                            <li>Automation design</li>
+                            <li>Journey orchestration</li>
+                        </ul>
+                    </article>
+                    <article class="service-card card" id="billing-revenue">
+                        <img src="assets/images/svc-billing-revenue.png" alt="Billing and Revenue Management" class="service-card-img" loading="lazy">
+                        <div class="service-kicker">Billing &amp; Revenue</div>
+                        <h2 class="service-title">Next-Gen Billing &amp; Revenue Management</h2>
+                        <p class="service-text">Empower your business with a scalable, automated ecosystem designed to manage complex billing cycles and maximize revenue growth.</p>
+                        <ul class="service-list">
+                            <li>Agile Billing &amp; Monetization</li>
+                            <li>Revenue Assurance &amp; Automation</li>
+                            <li>Partner Ecosystem Orchestration</li>
+                            <li>Customer Lifecycle Optimization</li>
+                            <li>Accelerated Time-to-Market</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-number">01</div>
+                    <h2 class="cta-title">
+                        <span>Let’s co-create</span>
+                        <span class="highlight">measurable growth</span>
+                    </h2>
+                    <p class="cta-description">Start with your outcomes. We’ll build the path,strategy, partnerships, and execution.</p>
+                    <div class="cta-actions">
+                        <a class="btn btn-primary btn-large" href="contact.html">
+                            <span class="btn-text">Contact</span>
+                            <span class="btn-glow"></span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </a>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
+                        <a class="btn btn-secondary btn-large" href="about.html">
+                            <span class="btn-text">Why Dorfinex</span>
+                        </a>
                     </div>
-                    
-                    <div class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <div class="cta-glow"></div>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1>Our Services</h1>
-                <p>Comprehensive technology and innovation services that enable organizations to drive measurable growth and sustain long-term competitiveness</p>
-            </div>
-        </section>
-
-        <!-- Services Detail Section -->
-        <section class="services-detail-section">
-            <div class="container">
-                <div class="services-detail-grid">
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Digital Consulting</h3>
-                        <p><strong>Scope:</strong> Growth strategy development, funnel optimization, go-to-market plans, and measurable execution frameworks.</p>
-                        <p><strong>Methodology:</strong> Data-driven analysis, market research, competitive benchmarking, and iterative optimization.</p>
-                        <p><strong>Deliverables:</strong> Strategic roadmap, implementation plan, KPI framework, and performance tracking system.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Partnerships & Ecosystem</h3>
-                        <p><strong>Scope:</strong> Partnership identification, negotiation, and operationalization to create win-win relationships that scale.</p>
-                        <p><strong>Methodology:</strong> Ecosystem mapping, partner profiling, deal structuring, and relationship management.</p>
-                        <p><strong>Deliverables:</strong> Partner strategy, negotiation framework, operational playbook, and success metrics.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Tech Advisory</h3>
-                        <p><strong>Scope:</strong> Technology vendor selection, solution architecture design, and roadmap alignment with business goals.</p>
-                        <p><strong>Methodology:</strong> Technical assessment, vendor evaluation, architecture review, and implementation planning.</p>
-                        <p><strong>Deliverables:</strong> Technology roadmap, vendor recommendations, architecture blueprint, and migration plan.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI & Analytics</h3>
-                        <p><strong>Scope:</strong> AI/ML implementation, analytics strategy, personalization engines, and ROI optimization.</p>
-                        <p><strong>Methodology:</strong> Data audit, AI readiness assessment, model development, and performance optimization.</p>
-                        <p><strong>Deliverables:</strong> AI strategy, analytics dashboard, personalization framework, and ROI tracking system.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data Strategy & Modernization</h3>
-                        <div class="service-preview">
-                            <p><strong>Scope:</strong> Enterprise Data Architecture, BI Platform Modernization, ETL & Data Integration</p>
-                            <p><strong>Methodology:</strong> Data Quality & Health Check, Legacy System Assessment</p>
-                            <p><strong>Deliverables:</strong> Consolidated Data Warehouses, Interactive Executive Dashboards, Automated Data Pipelines</p>
-                        </div>
-                        <div class="service-details">
-                            <p><strong>Scope:</strong></p>
-                            <p><strong>Enterprise Data Architecture:</strong> We design scalable, secure, and future-ready data architectures that support both today's reporting needs and tomorrow's AI initiatives. Your data becomes organized, accessible, and standardized across the organization forming a strong foundation for advanced analytics.</p>
-                            <p><strong>BI Platform Modernization:</strong> We transform legacy reporting environments into modern, agile BI platforms (such as Tableau or Power BI) with zero data loss. This modernization delivers faster performance, intuitive self-service analytics, and a user-friendly interface that elevates decision-making across business.</p>
-                            <p><strong>ETL & Data Integration:</strong> We eliminate data silos by building seamless ETL (Extract, Transform, Load) pipelines that unify fragmented systems. Our integration approach ensures raw data from various operational sources is automatically cleaned, transformed, and consolidated into a single, reliable analytical layer.</p>
-                            <p><strong>Methodology:</strong></p>
-                            <p><strong>Data Quality & Health Check:</strong> Before applying any analytical or AI model, we conduct comprehensive assessments to uncover inconsistencies, gaps, and inaccuracies in your data. We treat high-quality data as essential, ensuring every strategic decision is grounded in trustworthy information.</p>
-                            <p><strong>Legacy System Assessment:</strong> We perform an in-depth analysis of your existing infrastructure to identify performance bottlenecks and technical debt. This assessment leads to a clear, low-risk modernization roadmap that upgrades your systems with minimal operational impact.</p>
-                            <p><strong>Deliverables:</strong></p>
-                            <p><strong>Consolidated Data Warehouses:</strong> A centralized "Single Source of Truth" repository that aggregates data from all business units (Sales, Finance, Marketing). This eliminates reporting discrepancies and provides a unified, 360-degree view of your enterprise performance.</p>
-                            <p><strong>Interactive Executive Dashboards:</strong> Visually compelling, real-time dashboards specifically tailored for C-level executives and managers. We transform complex backend data into clear, actionable visual narratives that allow for instant monitoring of KPIs and strategic targets.</p>
-                            <p><strong>Automated Data Pipelines:</strong> Robust, low-maintenance data workflows that run automatically without manual intervention. These pipelines ensure your analytics systems are always fed with fresh data, reducing manual errors and freeing up your team's time for high-value analysis.</p>
-                        </div>
-                        <button class="btn btn-secondary read-more-btn" style="margin-top: 1rem; margin-right: 1rem;">Read more</button>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-broadcast-tower"></i>
-                        </div>
-                        <h3>Telecom & ICT</h3>
-                        <p><strong>Scope:</strong> Product strategy, channel development, and enterprise solutions for service providers. Providing E2E 5G monitoring, reporting, change management, event(fault) Management activities with an extensive knowledge of various RAN vendors.</p>
-                        <p><strong>Methodology:</strong> Market analysis, product positioning, channel strategy, and go-to-market execution.</p>
-                        <p><strong>Deliverables:</strong> Product roadmap, channel strategy, market entry plan, and sales enablement toolkit.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="service-detail-card">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>MarTech Solutions</h3>
-                        <p><strong>Scope:</strong> Marketing technology stack optimization, automation platforms, and customer journey orchestration.</p>
-                        <p><strong>Methodology:</strong> Tech stack audit, platform integration, workflow automation, and performance optimization.</p>
-                        <p><strong>Deliverables:</strong> MarTech roadmap, integration strategy, automation workflows, and ROI measurement framework.</p>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Let's discuss how our services can drive measurable growth for your organization.</p>
-                <a href="contact.html" class="btn btn-primary">Contact</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/images/logo_footer_last-removebg-preview.png" alt="Dorfinex" class="logo-img">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="footer-logo-img"><span>DORFINEX</span></div>
+                    <p class="footer-tagline">Shaping Digital Growth with Strategic Partnerships</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Company</h4>
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="services.html" class="footer-link">Services</a>
+                        <a href="insights.html" class="footer-link">Insights</a>
                     </div>
-                    <p>Delivering measurable growth through digital consulting and technology solutions.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Digital Consulting</a></li>
-                        <li><a href="services.html">Partnerships & Ecosystem</a></li>
-                        <li><a href="services.html">Tech Advisory</a></li>
-                        <li><a href="services.html">AI & Analytics</a></li>
-                        <li><a href="services.html">Data Strategy & Modernization</a></li>
-                        <li><a href="services.html">MarTech Solutions</a></li>
-                        <li><a href="services.html">Telecom ICT</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Services</h4>
+                        <a href="services.html#digital-consulting" class="footer-link">Digital consulting</a>
+                        <a href="services.html#partnerships-ecosystem" class="footer-link">Partnerships &amp; ecosystem</a>
+                        <a href="services.html#data-strategy" class="footer-link">Data strategy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Connect</h4>
+                        <a href="faq.html" class="footer-link">FAQ</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Dorfinex. All rights reserved.</p>
+                <p>&copy; <span class="js-current-year">2026</span> Dorfinex. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script type="module" src="js/main.js"></script>
-    <script src="js/cookie-consent.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

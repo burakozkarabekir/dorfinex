@@ -3,557 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Dorfinex — Digital Consulting & Partnerships</title>
-    <meta name="description" content="Frequently asked questions about Dorfinex digital consulting services, partnerships, pricing, and engagement models.">
-    
+    <title>FAQ , Dorfinex</title>
+    <meta name="description" content="Frequently asked questions about Dorfinex services, engagement models, and delivery approach.">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="any">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="32x32">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="16x16">
-    <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="48x48">
-    <link rel="shortcut icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/small_logo_d.jpeg">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/small_logo_d.jpeg">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        .faq-section {
-            padding: 4rem 0;
-            background: var(--surface);
-        }
-        
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .faq-category {
-            margin-bottom: 3rem;
-        }
-        
-        .faq-category h2 {
-            color: var(--text);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--accent);
-        }
-        
-        .faq-item {
-            background: var(--bg);
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        
-        .faq-item:hover {
-            box-shadow: var(--shadow);
-        }
-        
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--text);
-            user-select: none;
-        }
-        
-        .faq-question:hover {
-            color: var(--accent);
-        }
-        
-        .faq-icon {
-            font-size: 1.25rem;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .faq-answer-content {
-            padding: 0 1.5rem 1.5rem;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-        
-        .faq-cta {
-            background: linear-gradient(135deg, #475569 0%, #334155 50%, #1E293B 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        .faq-cta h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .faq-cta p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <!-- Top bar kept for design consistency -->
-                </div>
-            </div>
-        </div>
-        
-        <div class="main-header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/dorfinex_llatest_logo_seffafpreview.png" alt="Dorfinex" class="logo-img">
-                        </a>
-                    </div>
-                    
-                    <nav class="main-nav">
-                        <ul class="nav-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="insights.html">Insights</a></li>
-                            <li><a href="faq.html" class="active">FAQ</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <div class="header-actions">
-                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="social-link linkedin-link" aria-label="Follow Dorfinex on LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section class="page-header">
-            <div class="container">
-                <h1>Frequently Asked Questions</h1>
-                <p>Find answers to common questions about our services and engagement models</p>
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ , Dorfinex">
+    <meta property="og:description" content="Frequently asked questions about Dorfinex services, engagement models, and delivery approach.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dorfinex.com/faq">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="faq">
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="loader-logo-img">
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="index.html" aria-label="Dorfinex home">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="brand-logo">
+                <span class="logo-text">DORFINEX</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-page="home"><span>Home</span></a>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link" data-page="about"><span>About</span></a>
+                    <div class="nav-dropdown">
+                        <a href="about.html#mission">Mission</a>
+                        <a href="about.html#mission">Vision</a>
+                        <a href="about.html#what-makes-us-different">What Makes Us Different</a>
+                        <a href="about.html#who-we-serve">Who We Serve</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link" data-page="services"><span>Services</span></a>
+                    <div class="nav-dropdown">
+                        <a href="services.html#digital-consulting">Digital Consulting</a>
+                        <a href="services.html#partnerships-ecosystem">Partnerships &amp; Ecosystem</a>
+                        <a href="services.html#tech-advisory">Tech Advisory</a>
+                        <a href="services.html#ai-analytics">AI &amp; Analytics</a>
+                        <a href="services.html#data-strategy">Data Strategy</a>
+                        <a href="services.html#telecom-ict">Telecom &amp; ICT</a>
+                        <a href="services.html#martech">MarTech Solutions</a>
+                        <a href="services.html#billing-revenue">Billing &amp; Revenue</a>
+                    </div>
+                </div>
+                <a href="insights.html" class="nav-link" data-page="insights"><span>Insights</span></a>
+                <div class="nav-item">
+                    <a href="faq.html" class="nav-link" data-page="faq"><span>FAQ</span></a>
+                    <div class="nav-dropdown">
+                        <a href="faq.html#general">General Questions</a>
+                        <a href="faq.html#technical">Technical Questions</a>
+                        <a href="faq.html#services-solutions">Services &amp; Solutions</a>
+                        <a href="faq.html#engagement-pricing">Engagement &amp; Pricing</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link cta-nav" data-page="contact"><span>Contact</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="hero-background">
+                <div class="hologram-effect"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="grid-overlay grid-layer-2"></div>
+                <div class="grid-overlay grid-layer-4"></div>
+            </div>
+            <div class="container page-hero-inner">
+                <div class="page-kicker">FAQ</div>
+                <h1 class="page-title">Frequently asked questions</h1>
+                <p class="page-subtitle">Find answers to common questions about our services and engagement models.</p>
             </div>
         </section>
 
-        <section class="faq-section">
-            <div class="container faq-container">
-                
-                <!-- General Questions -->
-                <div class="faq-category">
-                    <h2><i class="fas fa-question-circle"></i> General Questions</h2>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What is Dorfinex?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Dorfinex is a digital consulting and technology partnership firm that helps enterprises, service providers, and technology vendors achieve measurable growth through strategic consulting, ecosystem partnerships, and technology innovation. We specialize in digital transformation, AI/analytics, telecom/ICT solutions, and go-to-market strategies.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What industries do you serve?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We primarily serve telecommunications, technology, enterprise software, and digital platform companies. Our expertise spans across B2B and B2C sectors, including service providers, SaaS vendors, hardware manufacturers, system integrators, and innovative startups across various verticals.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Where are you located?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Dorfinex operates with a flexible, remote-first model to best serve our global clientele. We work with clients remotely and on-site based on project requirements, ensuring seamless collaboration regardless of location.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section class="content-section alt">
+            <div class="container">
+                <div class="faq-layout">
+                    <div class="faq-group">
+                        <h2 class="faq-group-title" id="general">General questions</h2>
 
-                <!-- Technical Questions -->
-                <div class="faq-category">
-                    <h2><i class="fas fa-code"></i> Technical Questions</h2>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What is your typical project process?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>1. Discovery & Assessment (1-2 weeks)</strong></p>
-                                <p>We analyze your current state, goals, and constraints to understand your unique context and requirements.</p>
-                                
-                                <p><strong>2. Strategy & Planning (1-2 weeks)</strong></p>
-                                <p>We develop a detailed roadmap with clear milestones and KPIs that align with your business objectives.</p>
-                                
-                                <p><strong>3. Execution & Implementation (2-12 weeks)</strong></p>
-                                <p>Hands-on delivery with your team, including training and knowledge transfer to ensure sustainable success.</p>
-                                
-                                <p><strong>4. Optimization & Support (ongoing)</strong></p>
-                                <p>We measure results and provide ongoing guidance to ensure continuous improvement and long-term value delivery.</p>
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What is Dorfinex?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Dorfinex is a digital consulting and technology partnership firm that helps enterprises, service providers, and technology vendors achieve measurable growth through strategic consulting, ecosystem partnerships, and technology innovation. We specialize in digital transformation, AI/analytics, telecom/ICT solutions, and go-to-market strategies.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How quickly can you start?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We can typically begin new projects within 1-2 weeks of contract signature. For urgent initiatives, we can start initial discovery and planning within 3-5 business days. Our team is structured to be flexible and responsive, allowing us to scale resources based on your timeline requirements. We'll always provide a realistic timeline during our initial consultation.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How do you measure success?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Success is measured through clear, agreed-upon KPIs established during project planning. Common metrics include: Revenue growth, Customer acquisition cost reduction, Operational efficiency improvements, Time-to-market acceleration, Partnership deal velocity, Technology adoption rates, and ROI achievement. We provide regular progress reports and adjust strategies based on real performance data to ensure we're delivering measurable value.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What technologies do you specialize in?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We have deep expertise across cloud platforms, data & analytics, AI/ML frameworks, CRM/ERP systems, MarTech stacks, telecom technologies, and modern development stacks including microservices, containers, and serverless architectures. We're technology-agnostic and recommend solutions based on your specific context and requirements.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you provide ongoing support after project completion?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Yes. We offer post-project support through various models:</p>
-                                <p><strong>1. Extended Support:</strong> Fixed period of assistance after go-live.</p>
-                                <p><strong>2. Retainer Agreements:</strong> Ongoing advisory and troubleshooting.</p>
-                                <p><strong>3. On-Demand Support:</strong> Pay-as-you-go help when needed.</p>
-                                <p><strong>4. Managed Services:</strong> We operate and optimize on your behalf.</p>
-                                <p>Our goal is to ensure long-term success, not just project completion.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Services Questions -->
-                <div class="faq-category">
-                    <h2><i class="fas fa-cogs"></i> Services & Solutions</h2>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What services do you offer?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Our core services include: Digital Consulting (growth strategy, GTM plans, funnel optimization), Partnerships & Ecosystem Development, Tech Advisory (vendor selection, architecture review), AI & Analytics (ML implementation, data strategy), Telecom & ICT Solutions (5G, network monitoring), and MarTech Solutions (automation, customer journey orchestration).
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What industries do you serve?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    We primarily serve telecommunications, technology, enterprise software, and digital platform companies. Our expertise spans across B2B and B2C sectors, including service providers, SaaS vendors, hardware manufacturers, system integrators, and innovative startups across various verticals.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How do you approach digital transformation projects?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>We follow a pragmatic, outcome-focused approach:</p>
-                                <p><strong>1. Discovery & Assessment:</strong> Understand current state and business goals.</p>
-                                <p><strong>2. Strategy Development:</strong> Create actionable roadmap with clear KPIs.</p>
-                                <p><strong>3. Execution:</strong> Hands-on implementation with your team.</p>
-                                <p><strong>4. Optimization:</strong> Continuous measurement and improvement.</p>
-                                <p>We emphasize quick wins while building long-term capabilities.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you only provide strategy or also implementation?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We provide both. Unlike traditional consulting firms that stop at strategy, we roll up our sleeves and execute alongside your team. Our engagements can range from pure advisory to full end-to-end implementation, depending on your needs. We believe the best strategies are those that get implemented successfully.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Can you help with technology vendor selection?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Absolutely. Our Tech Advisory service includes comprehensive vendor evaluation based on your specific requirements. We are vendor-agnostic and provide unbiased recommendations. We assess technical capabilities, pricing models, integration complexity, support quality, and long-term viability to help you make informed decisions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Engagement & Pricing -->
-                <div class="faq-category">
-                    <h2><i class="fas fa-handshake"></i> Engagement & Pricing</h2>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What are your engagement models?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We offer flexible engagement models: (1) Project-Based - fixed scope and timeline with defined deliverables, (2) Retainer - ongoing advisory and support on monthly basis, (3) Time & Materials - flexible resource allocation billed hourly/daily, (4) Success-Based - performance-linked fees tied to measurable outcomes. We tailor our approach to your specific needs and risk profile.
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>Where are you located?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Dorfinex operates with a flexible, remote-first model to best serve our global clientele. We work with clients remotely and on-site based on project requirements, ensuring seamless collaboration regardless of location.
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How long does a typical engagement last?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Engagement duration varies based on scope. Strategic assessments typically take 4-8 weeks. Digital transformation programs range from 3-12 months. Partnership development projects span 2-6 months. We can also provide ongoing advisory relationships that last multiple years. We'll provide a clear timeline during the scoping phase.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How much do your services cost?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Pricing depends on project scope, complexity, duration, and required expertise. We provide transparent proposals with detailed cost breakdowns tailored to your specific needs. We offer flexible engagement models and payment terms that can be structured to align with your budget and cash flow requirements. Contact us for a customized quote based on your requirements.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you work with startups?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Yes! We work with innovative startups, especially in technology and digital platform sectors. For early-stage companies, we offer flexible pricing models including equity-based arrangements, milestone-based payments, and reduced rates for promising ventures. We're passionate about helping innovators scale and can provide valuable introductions to investors and potential partners.
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Process & Timeline -->
-                <div class="faq-category">
-                    <h2><i class="fas fa-tasks"></i> Process & Timeline</h2>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What is your typical project process?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>1. Discovery & Assessment (1-2 weeks)</strong></p>
-                                <p>We analyze your current state, goals, and constraints to understand your unique context and requirements.</p>
-                                
-                                <p><strong>2. Strategy & Planning (1-2 weeks)</strong></p>
-                                <p>We develop a detailed roadmap with clear milestones and KPIs that align with your business objectives.</p>
-                                
-                                <p><strong>3. Execution & Implementation (2-12 weeks)</strong></p>
-                                <p>Hands-on delivery with your team, including training and knowledge transfer to ensure sustainable success.</p>
-                                
-                                <p><strong>4. Optimization & Support (ongoing)</strong></p>
-                                <p>We measure results and provide ongoing guidance to ensure continuous improvement and long-term value delivery.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How quickly can you start?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                We can typically begin new projects within 1-2 weeks of contract signature. For urgent initiatives, we can start initial discovery and planning within 3-5 business days. Our team is structured to be flexible and responsive, allowing us to scale resources based on your timeline requirements. We'll always provide a realistic timeline during our initial consultation.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How do you measure success?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                Success is measured through clearly defined KPIs agreed upon at project start. Common metrics include: revenue growth, cost reduction, customer acquisition cost, conversion rate improvement, time-to-market reduction, partner deals closed, system uptime/performance, user adoption rates, and ROI. We provide regular progress reports with data-backed insights and work collaboratively with your team to adjust strategies based on results.
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="faq-group">
+                        <h2 class="faq-group-title" id="technical">Technical questions</h2>
 
-                <!-- CTA Box -->
-                <div class="faq-cta">
-                    <h3>Still Have Questions?</h3>
-                    <p>Can't find the answer you're looking for? Our team is here to help.</p>
-                    <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--accent); border: none;">
-                        <span>Contact Us</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What is your typical project process?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    <ol class="faq-steps">
+                                        <li><strong>Discovery &amp; assessment (1–2 weeks):</strong> We analyze your current state, goals, and constraints to understand your context.</li>
+                                        <li><strong>Strategy &amp; planning (1–2 weeks):</strong> We develop a roadmap with clear milestones and KPIs aligned to business objectives.</li>
+                                        <li><strong>Execution &amp; implementation (2–12 weeks):</strong> Hands-on delivery with your team, including training and knowledge transfer.</li>
+                                        <li><strong>Optimization &amp; support (ongoing):</strong> We measure results and provide ongoing guidance for continuous improvement.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>How quickly can you start?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    We can typically begin new projects within 1–2 weeks of contract signature. For urgent initiatives, we can start initial discovery and planning within 3–5 business days. We'll always provide a realistic timeline during our initial consultation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>How do you measure success?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Success is measured through clear, agreed-upon KPIs established during project planning. Common metrics include revenue growth, customer acquisition cost reduction, operational efficiency improvements, time-to-market acceleration, partnership deal velocity, technology adoption rates, and ROI achievement. We provide regular progress reports and adjust based on real performance data.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What technologies do you specialize in?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    We have deep expertise across cloud platforms, data &amp; analytics, AI/ML frameworks, CRM/ERP systems, MarTech stacks, telecom technologies, and modern development stacks including microservices, containers, and serverless architectures. We're technology-agnostic and recommend solutions based on your context and requirements.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>Do you provide ongoing support after project completion?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Yes. We offer post-project support through extended support after go-live, retainer agreements, on-demand support, or managed services. Our goal is long-term success, not just project completion.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-group">
+                        <h2 class="faq-group-title" id="services-solutions">Services &amp; solutions</h2>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What services do you offer?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Our core services include Digital Consulting (growth strategy, GTM plans, funnel optimization), Partnerships &amp; Ecosystem Development, Tech Advisory (vendor selection, architecture review), AI &amp; Analytics (ML implementation, data strategy), Telecom &amp; ICT solutions, and MarTech Solutions (automation, customer journey orchestration).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>Do you only provide strategy or also implementation?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    We provide both. Unlike traditional consulting firms that stop at strategy, we roll up our sleeves and execute alongside your team. Engagements can range from advisory to full end-to-end implementation, depending on your needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>Can you help with technology vendor selection?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Absolutely. Our Tech Advisory service includes vendor evaluation based on your requirements. We are vendor-agnostic and assess technical capabilities, pricing models, integration complexity, support quality, and long-term viability.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-group">
+                        <h2 class="faq-group-title" id="engagement-pricing">Engagement &amp; pricing</h2>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>What are your engagement models?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    We offer Project-Based, Retainer, Time &amp; Materials, and Success-Based engagement models. We tailor the approach to your needs and risk profile.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>How long does a typical engagement last?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Strategic assessments typically take 4–8 weeks. Transformation programs range from 3–12 months. Partnership development projects span 2–6 months. We can also support ongoing advisory relationships.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>How much do your services cost?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Pricing depends on scope, complexity, duration, and required expertise. We provide transparent proposals with detailed breakdowns tailored to your needs. Contact us for a customized quote.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" type="button">
+                                <span>Do you work with startups?</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-panel">
+                                <div class="faq-panel-inner">
+                                    Yes. For early-stage companies, we offer flexible models including milestone-based payments and reduced rates for promising ventures. We’re passionate about helping innovators scale.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-cta card">
+                        <h2 class="faq-cta-title">Still have questions?</h2>
+                        <p class="faq-cta-text">Can’t find the answer you’re looking for? Our team is here to help.</p>
+                        <a class="btn btn-primary" href="contact.html">
+                            <span class="btn-text">Contact</span>
+                            <span class="btn-glow"></span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/images/logo_footer_last-removebg-preview.png" alt="Dorfinex" class="logo-img">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="footer-logo-img"><span>DORFINEX</span></div>
+                    <p class="footer-tagline">Shaping Digital Growth with Strategic Partnerships</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Company</h4>
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="services.html" class="footer-link">Services</a>
+                        <a href="insights.html" class="footer-link">Insights</a>
                     </div>
-                    <p>Delivering measurable growth through digital consulting and technology solutions.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Digital Consulting</a></li>
-                        <li><a href="services.html">Partnerships & Ecosystem</a></li>
-                        <li><a href="services.html">Tech Advisory</a></li>
-                        <li><a href="services.html">AI & Analytics</a></li>
-                        <li><a href="services.html">Data Strategy & Modernization</a></li>
-                        <li><a href="services.html">MarTech Solutions</a></li>
-                        <li><a href="services.html">Telecom ICT</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Services</h4>
+                        <a href="services.html#digital-consulting" class="footer-link">Digital consulting</a>
+                        <a href="services.html#partnerships-ecosystem" class="footer-link">Partnerships &amp; ecosystem</a>
+                        <a href="services.html#data-strategy" class="footer-link">Data strategy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Connect</h4>
+                        <a href="faq.html" class="footer-link">FAQ</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Dorfinex. All rights reserved.</p>
+                <p>&copy; <span class="js-current-year">2026</span> Dorfinex. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/main.js"></script>
-    <script src="js/cookie-consent.js"></script>
-    <script>
-        // FAQ Accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    if (isActive) {
-                        item.classList.remove('active');
-                    } else {
-                        item.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
