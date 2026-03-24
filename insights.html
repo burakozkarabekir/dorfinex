@@ -3,219 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | Dorfinex — Digital Consulting & Partnerships</title>
-    <meta name="description" content="Stay ahead with our latest insights on digital transformation, AI business strategy, MarTech personalization, and telecom ICT growth.">
-    
+    <title>Insights , Dorfinex</title>
+    <meta name="description" content="Dorfinex insights on AI, personalization, and telecom transformation,practical perspectives built for measurable outcomes.">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="any">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="32x32">
     <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="16x16">
-    <link rel="icon" type="image/jpeg" href="assets/images/small_logo_d.jpeg" sizes="48x48">
-    <link rel="shortcut icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/small_logo_d.jpeg">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/small_logo_d.jpeg">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/small_logo_d.jpeg">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <!-- Top bar kept for design consistency -->
-                </div>
-            </div>
-        </div>
-        
-        <!-- Main Header -->
-        <div class="main-header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/dorfinex_llatest_logo_seffafpreview.png" alt="Dorfinex" class="logo-img">
-                        </a>
-                    </div>
-                    
-                    <nav class="main-nav">
-                        <ul class="nav-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="insights.html" class="active">Insights</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <div class="header-actions">
-                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="social-link linkedin-link" aria-label="Follow Dorfinex on LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="contact.html" class="btn btn-primary">Contact</a>
-                    </div>
-                    
-                    <div class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1>Insights & Analysis</h1>
-                <p>Stay ahead with our latest insights on digital transformation, AI strategy, and growth optimization.</p>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Insights , Dorfinex">
+    <meta property="og:description" content="Practical perspectives on AI, personalization, and telecom transformation,built for measurable outcomes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dorfinex.com/insights">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="insights">
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="loader-logo-img">
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="index.html" aria-label="Dorfinex home">
+                <img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="brand-logo">
+                <span class="logo-text">DORFINEX</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-page="home"><span>Home</span></a>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link" data-page="about"><span>About</span></a>
+                    <div class="nav-dropdown">
+                        <a href="about.html#mission">Mission</a>
+                        <a href="about.html#mission">Vision</a>
+                        <a href="about.html#what-makes-us-different">What Makes Us Different</a>
+                        <a href="about.html#who-we-serve">Who We Serve</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link" data-page="services"><span>Services</span></a>
+                    <div class="nav-dropdown">
+                        <a href="services.html#digital-consulting">Digital Consulting</a>
+                        <a href="services.html#partnerships-ecosystem">Partnerships &amp; Ecosystem</a>
+                        <a href="services.html#tech-advisory">Tech Advisory</a>
+                        <a href="services.html#ai-analytics">AI &amp; Analytics</a>
+                        <a href="services.html#data-strategy">Data Strategy</a>
+                        <a href="services.html#telecom-ict">Telecom &amp; ICT</a>
+                        <a href="services.html#martech">MarTech Solutions</a>
+                        <a href="services.html#billing-revenue">Billing &amp; Revenue</a>
+                    </div>
+                </div>
+                <a href="insights.html" class="nav-link" data-page="insights"><span>Insights</span></a>
+                <div class="nav-item">
+                    <a href="faq.html" class="nav-link" data-page="faq"><span>FAQ</span></a>
+                    <div class="nav-dropdown">
+                        <a href="faq.html#general">General Questions</a>
+                        <a href="faq.html#technical">Technical Questions</a>
+                        <a href="faq.html#services-solutions">Services &amp; Solutions</a>
+                        <a href="faq.html#engagement-pricing">Engagement &amp; Pricing</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link cta-nav" data-page="contact"><span>Contact</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <img src="assets/images/insights-hero.jpg" alt="" class="page-hero-img" loading="eager">
+            <div class="hero-background">
+                <div class="hologram-effect"></div>
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-3"></div>
+                <div class="grid-overlay grid-layer-2"></div>
+                <div class="grid-overlay grid-layer-3"></div>
+            </div>
+            <div class="container page-hero-inner">
+                <div class="page-kicker">Insights</div>
+                <h1 class="page-title">Practical perspectives for teams that deliver</h1>
+                <p class="page-subtitle">
+                    Articles on AI, personalization, data, and telecom transformation,built for measurable outcomes.
+                </p>
             </div>
         </section>
 
-        <!-- Featured Insights -->
-        <section class="insights-section">
+        <section class="content-section alt">
             <div class="container">
-                <div class="section-header">
-                    <h2>Featured Insights</h2>
-                </div>
-                
                 <div class="insights-grid">
-                    <article class="insight-card">
-                        <div class="insight-image">
-                            <div class="insight-placeholder">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <span class="insight-category">AI & Analytics</span>
-                            <h3>How AI is Transforming Customer Acquisition in 2025</h3>
-                            <p>Discover the latest AI strategies that are reducing customer acquisition costs by up to 50% while improving conversion rates across industries.</p>
-                            <a href="blog/ai-transforming-customer-acquisition.html" class="insight-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                    <article class="insight-card card">
+                        <div class="insight-meta">AI • 2025</div>
+                        <h2 class="insight-title">How AI is Transforming Customer Acquisition in 2025</h2>
+                        <p class="insight-excerpt">Strategies reducing customer acquisition costs by up to 50% while improving conversion rates.</p>
+                        <a class="card-link" href="blog/ai-transforming-customer-acquisition.html">
+                            <span>Read full article</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </article>
-                    
-                    <article class="insight-card">
-                        <div class="insight-image">
-                            <div class="insight-placeholder">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <span class="insight-category">MarTech</span>
-                            <h3>The Complete Guide to Marketing Personalization at Scale</h3>
-                            <p>Learn how leading companies are implementing personalization strategies that increase customer lifetime value by 40% and boost retention rates.</p>
-                            <a href="blog/marketing-personalization-scale.html" class="insight-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+
+                    <article class="insight-card card">
+                        <div class="insight-meta">MarTech</div>
+                        <h2 class="insight-title">Marketing Personalization at Scale</h2>
+                        <p class="insight-excerpt">Implementation patterns that can increase customer lifetime value by 40% and boost retention.</p>
+                        <a class="card-link" href="blog/marketing-personalization-scale.html">
+                            <span>Read full article</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </article>
-                    
-                    <article class="insight-card">
-                        <div class="insight-image">
-                            <div class="insight-placeholder">
-                                <i class="fas fa-broadcast-tower"></i>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <span class="insight-category">Telecom & ICT</span>
-                            <h3>5G and IoT: Driving the Next Wave of Digital Transformation</h3>
-                            <p>Explore how telecom companies are leveraging 5G and IoT technologies to create new revenue streams and improve operational efficiency.</p>
-                            <a href="blog/5g-iot-digital-transformation.html" class="insight-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+
+                    <article class="insight-card card">
+                        <div class="insight-meta">Telecom</div>
+                        <h2 class="insight-title">5G and IoT Digital Transformation</h2>
+                        <p class="insight-excerpt">How telecom companies leverage 5G and IoT to create new revenue streams and improve efficiency.</p>
+                        <a class="card-link" href="blog/5g-iot-digital-transformation.html">
+                            <span>Read full article</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </article>
-                    
-                    <article class="insight-card">
-                        <div class="insight-image">
-                            <div class="insight-placeholder">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <span class="insight-category">Growth Strategy</span>
-                            <h3>Data-Driven Growth: Building Sustainable Business Models</h3>
-                            <p>How to build growth systems that scale with data-driven decision making and systematic optimization processes.</p>
-                            <a href="blog/data-driven-growth-strategies.html" class="insight-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+
+                    <article class="insight-card card">
+                        <div class="insight-meta">Growth strategy</div>
+                        <h2 class="insight-title">Data-Driven Growth: Building Sustainable Business Models</h2>
+                        <p class="insight-excerpt">A practical framework for measurement, experimentation, optimization, and scale.</p>
+                        <a class="card-link" href="blog/data-driven-growth-strategies.html">
+                            <span>Read full article</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </article>
-                    
-                    <article class="insight-card">
-                        <div class="insight-image">
-                            <div class="insight-placeholder">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <span class="insight-category">Partnerships</span>
-                            <h3>Building Strategic Partnerships That Actually Drive Revenue</h3>
-                            <p>Framework for identifying, negotiating, and managing partnerships that deliver measurable business impact and sustainable growth.</p>
-                            <a href="blog/strategic-partnerships-revenue-growth.html" class="insight-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+
+                    <article class="insight-card card">
+                        <div class="insight-meta">Partnerships</div>
+                        <h2 class="insight-title">Building Strategic Partnerships That Drive Revenue</h2>
+                        <p class="insight-excerpt">A proven framework for partner selection, enablement, and performance management.</p>
+                        <a class="card-link" href="blog/strategic-partnerships-revenue-growth.html">
+                            <span>Read full article</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </article>
-                    
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-number">01</div>
+                    <h2 class="cta-title">
+                        <span>Want insights</span>
+                        <span class="highlight">applied</span>
+                    </h2>
+                    <p class="cta-description">Let’s turn these ideas into measurable outcomes,through consulting, partnerships, and execution.</p>
+                    <div class="cta-actions">
+                        <a class="btn btn-primary btn-large" href="contact.html">
+                            <span class="btn-text">Contact</span>
+                            <span class="btn-glow"></span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a class="btn btn-secondary btn-large" href="services.html">
+                            <span class="btn-text">Explore services</span>
+                        </a>
+                    </div>
+                    <div class="cta-glow"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/images/logo_footer_last-removebg-preview.png" alt="Dorfinex" class="logo-img">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="assets/images/small_logo_d.jpeg" alt="Dorfinex logo" class="footer-logo-img"><span>DORFINEX</span></div>
+                    <p class="footer-tagline">Shaping Digital Growth with Strategic Partnerships</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Company</h4>
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="services.html" class="footer-link">Services</a>
+                        <a href="insights.html" class="footer-link">Insights</a>
                     </div>
-                    <p>Delivering measurable growth through digital consulting and technology solutions.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Digital Consulting</a></li>
-                        <li><a href="services.html">Partnerships & Ecosystem</a></li>
-                        <li><a href="services.html">Tech Advisory</a></li>
-                        <li><a href="services.html">AI & Analytics</a></li>
-                        <li><a href="services.html">Data Strategy & Modernization</a></li>
-                        <li><a href="services.html">MarTech Solutions</a></li>
-                        <li><a href="services.html">Telecom ICT</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Services</h4>
+                        <a href="services.html#digital-consulting" class="footer-link">Digital consulting</a>
+                        <a href="services.html#partnerships-ecosystem" class="footer-link">Partnerships &amp; ecosystem</a>
+                        <a href="services.html#data-strategy" class="footer-link">Data strategy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Connect</h4>
+                        <a href="faq.html" class="footer-link">FAQ</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="https://www.linkedin.com/company/dorfinex/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Dorfinex. All rights reserved.</p>
+                <p>&copy; <span class="js-current-year">2026</span> Dorfinex. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script type="module" src="js/main.js"></script>
-    <script src="js/cookie-consent.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+

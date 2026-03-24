@@ -1,19 +1,4 @@
-# robots.txt for Dorfinex
-# Generated: October 13, 2025
-
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.pdf$
 
-# Sitemap location
-Sitemap: https://dorfinex.com/sitemap.xml
-
-# Crawl delay (optional - reduces server load)
-Crawl-delay: 1
-
-# Block specific bots if needed (optional)
-# User-agent: BadBot
-# Disallow: /
-
+Sitemap: https://YOUR_DOMAIN/sitemap.xml
