@@ -213,10 +213,19 @@ function init() {
         });
 
         document.querySelectorAll('.nav-link').forEach((link) => {
-            link.addEventListener('click', () => setNavOpen(false));
+            link.addEventListener('click', () => {
+                // Don't close nav if this link is inside a nav-item with dropdown on mobile
+                if (window.innerWidth <= 768 && link.closest('.nav-item')) return;
+                setNavOpen(false);
+            });
         });
         navLinks.querySelectorAll('.lang-chip').forEach((langToggle) => {
             langToggle.addEventListener('click', () => setNavOpen(false));
+        });
+
+        // Close mobile menu when clicking dropdown sub-links
+        navLinks.querySelectorAll('.nav-dropdown a').forEach((dropLink) => {
+            dropLink.addEventListener('click', () => setNavOpen(false));
         });
 
         document.addEventListener('keydown', (event) => {
@@ -234,15 +243,26 @@ function init() {
     }
 
     // Mobile dropdown toggle
+    // First click: open dropdown and show sub-items
+    // Second click (dropdown already open): navigate to the page
     document.querySelectorAll('.nav-item > .nav-link').forEach((link) => {
         link.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                e.preventDefault();
                 const item = link.closest('.nav-item');
+                const isAlreadyOpen = item.classList.contains('open');
+
+                if (isAlreadyOpen) {
+                    // Second click — let the browser navigate to the href
+                    setNavOpen(false);
+                    return;
+                }
+
+                // First click — open dropdown, stay in menu
+                e.preventDefault();
                 document.querySelectorAll('.nav-item').forEach((other) => {
                     if (other !== item) other.classList.remove('open');
                 });
-                item.classList.toggle('open');
+                item.classList.add('open');
             }
         });
     });
