@@ -213,7 +213,13 @@ function init() {
         });
 
         document.querySelectorAll('.nav-link').forEach((link) => {
-            link.addEventListener('click', () => setNavOpen(false));
+            link.addEventListener('click', () => {
+                // On mobile, don't close menu if this link has a dropdown (let navigation happen naturally)
+                if (window.innerWidth <= 768 && link.closest('.nav-item')?.querySelector('.nav-dropdown')) {
+                    return;
+                }
+                setNavOpen(false);
+            });
         });
         navLinks.querySelectorAll('.lang-chip').forEach((langToggle) => {
             langToggle.addEventListener('click', () => setNavOpen(false));
@@ -233,16 +239,14 @@ function init() {
         });
     }
 
-    // Mobile dropdown toggle
+    // Mobile dropdown toggle — allow navigation on first click, just clean up other open dropdowns
     document.querySelectorAll('.nav-item > .nav-link').forEach((link) => {
-        link.addEventListener('click', (e) => {
+        link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
-                e.preventDefault();
                 const item = link.closest('.nav-item');
                 document.querySelectorAll('.nav-item').forEach((other) => {
                     if (other !== item) other.classList.remove('open');
                 });
-                item.classList.toggle('open');
             }
         });
     });
